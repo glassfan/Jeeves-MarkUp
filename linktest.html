@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <title>Pinegrow Bootstrap Blocks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="pinegrow, blocks, bootstrap" />
+        <meta name="description" content="My new website" />
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <!-- Core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+        <!-- Style Library -->
+        <link href="css/style-library-1.css" rel="stylesheet">
+        <link href="css/plugins.css" rel="stylesheet">
+        <link href="css/blocks.css" rel="stylesheet">
+        <link href="css/links.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body data-spy="scroll" data-target="nav">
+        <section class="content-block content-1-8">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#">
+                        <img src="images/brand/jeeves-logo.png" class="brand-img img-responsive">
+                    </a>
+                </div>
+                <ul class="nav nav-tabs text-center" role="tablist" id="myTab">
+                    <li class="active">
+                        <a href="#tab1" role="tab" data-toggle="tab">Navigation</a>
+                    </li>
+                    <li>
+                        <a href="#tab2" role="tab" data-toggle="tab">ViewPort</a>
+                    </li>
+                    <li>
+                        <a href="#tab3" role="tab" data-toggle="tab">Diagnostics</a>
+                    </li>
+                    <li>
+                        <a href="#tab4" role="tab" data-toggle="tab">Features</a>
+                    </li>
+                    <li>
+                        <a href="#tab5" role="tab" data-toggle="tab">FAQ</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-1 col-sm-6">
+                                <!-- <img class="img-responsive" src="images/fab-ll-drkgrn.png"> -->
+                                <div class="maparea">
+                                    <!-- style="background-image:url('images/fab-ll-drkgrn.png');"> -->
+                                    <img class="img-responsive" src="images/fab-ll-drkgrn.png">
+                                    <a class="btn btn-default black btn-sm" href="#" data-toggle="popover" title="Reset pose" data-placement="right" data-trigger="hover"><i class="fa fa-refresh" id="reset-pose" aria-hidden="true" data-toggle="popover"> pose</i></a>
+                                    <a class="btn btn-default black btn-sm" href="#" data-toggle="popover" title="Stop Narration" data-placement="right" data-trigger="hover"><i class="fa fa-ban" id="stop-talk" aria-hidden="true" data-toggle="popover"> voice</i></a>
+                                    <div class="dropdown maplocation location1-stairs">
+                                        <!-- <img class="img-responsive" src="images/Google_Maps.png" width="32" height="32" id="mapIcon1" class="dropdown-trigger" /> -->
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Stairs</li>
+                                            <a id="hov-get-stairs" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-stairs" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location2-home">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Home</li>
+                                            <a id="hov-get-home" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-home" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location3-robot-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Robot Lab</li>
+                                            <a id="hov-get-robotlab" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-robotlab" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location4-near-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Near Lab</li>
+                                            <a id="hov-get-near" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-near" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location5-circuit-lounge">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Circuit Lounge</li>
+                                            <a id="hov-get-circuits" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-circuits" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location6-Biomed-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Biomedical Lab</li>
+                                            <a id="hov-get-biomed" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-biomed" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./maparea  -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-5 col-sm-6">
+                                <!-- <div class="col-xs-2"> -->
+                                <!-- </div> -->
+                                <div class="map-text">
+                                    <h2>Guided Tour</h2>
+                                    <span class="fa fa-hand-pointer-o"> hover over/touch icon</span>
+                                    <ol>
+                                        <li>Drive Jeeve's manually to one of the known locations.</li>
+                                        <li>Set pose to Jeeve's physical location</li>
+                                        <li>Go to Location</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#tab1 -->
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 text-center">
+                                <div class="underlined-title">
+                                    <h1>ViewPort</h1>
+                                    <hr>
+                                </div>
+                                <!-- <h3>Lidar View</h3> -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                          <div class="camera-screen">
+                            <div class="col-md-8">
+                              <img class="center-block" src="http://192.168.1.2:8081/stream?topic=/camera/face" width="640">
+                            </div>
+                          </div>
+                            <!-- /.col -->
+                        </div>
+                        <div class="viewport-btns text-center">
+                            <a class="btn btn-default black btn-sm" href="#" data-trigger="hover"><i class="fa fa-video-camera" id="camera-view" aria-hidden="true"> camera</i></a>
+
+                            <a class="btn btn-default black btn-sm" href="#" data-trigger="hover"><i class="fa fa-bolt" id="lidar-view" aria-hidden="true"> lidar</i></a>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#tab2 -->
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 text-center">
+                                <div class="underlined-title">
+                                    <h1>Diagnostics</h1>
+                                    <hr>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                            <!-- <div class="col-sm-6 col-sm-offset-3"> -->
+                                <!-- <img class="img-responsive" src="http://placehold.it/600x450"> -->
+                            <div class="ros-out-content">
+
+                            </div>
+                            </div>
+
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#tab3 -->
+                    <div class="tab-pane fade" id="tab4">
+                        <section id="content-1-9" class="content-1-9 content-block">
+                            <div class="container">
+                                <div class="underlined-title">
+                                    <h1>Features</h1>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-car"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Navigation</h4>
+                                            <p>Jeeves is equipped with Mecanuum wheels and is programmed to drive to select locations of PSU's 4th Ave building lower level.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-code"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Kinect</h4>
+                                            <p>Jeeves has Kinect RGB-D camera, connected via USB 2.0 to the main computer. The Kinect is useful for human-robot Interaction and obstacle detection.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-comments-o"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Speech</h4>
+                                            <p>Retro avbdfgrgrgrrarasgasrgrag. rargsgargsrgarg. argargagasgasgasgsagsag.chillwave YOLO four loko photo booth. Brooklyn kale chips, seitan hella 3 wolf moon .</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-lightbulb-o"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Lidar</h4>
+                                            <p>Retro chillwave YOLO four loko photo booth. Brooklyn kale chips, seitan hella 3 wolf moon slow-carb paleo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-android"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Ros</h4>
+                                            <p>Retro chillwave YOLO four loko photo booth. Brooklyn kale chips, seitan hella 3 wolf moon slow-carb paleo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-laptop"></span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <h4>Platform</h4>
+                                            <p>Retro chillwave YOLO four loko photo booth. Brooklyn kale chips, seitan hella 3 wolf moon slow-carb paleo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.container -->
+                        </section>
+                    </div>
+                    <!-- /#tab4 -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <section class="content-block-nopad footer-wrap-1-3 bg-white">
+            <div class="container footer-1-3 bg-white">
+                <div id="colorstrip" />
+                <div class="col-md-4 pull-left">
+                    <img src="images/brand/PSU.png" class="brand-img img-responsive bg-offwhite margin-top5">
+                    <ul class="social social-light">
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-linux"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-windows"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-apple"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-google"></i></a>
+                        </li>
+                    </ul>
+                    <!-- /.social -->
+                </div>
+                <div class="col-md-4 pull-right">
+                    <p class="address-bold-line black margin-top10">Maseeh College of Engineering</p>
+                    <p class="address small black">
+                    1930 SW 4th Ave<br> Portland, Or.<br> 97212</p>
+                </div>
+                <div class="col-xs-12 footer-text">
+                    <!-- <p>Please take a few minutes to read our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></p> -->
+                    <i class="fa fa-copyright" aria-hidden="true">2017</i>
+                </div>
+            </div>
+            <!-- /.container -->
+        </section>
+        <section class="content-block-nopad bg-deepocean footer-wrap-1-2">
+            <!-- /.container -->
+        </section>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="js/bskit-scripts.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
+                if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
+                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
+                } else {
+                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+                }
+            });
+              $('#reset-pose').click(function() {
+                  $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+              });
+              $('#camera-view').click(function() {
+                $("#camera-screen").show();
+              });
+              $('#lidar-view').click(function() {
+                $("#camera-screen").hide();
+              });
+              //Default on html page load
+              $("#camera-screen").hide();
+        });
+
+    </script>
+        <script>
+        $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+        ;
+        (function() {
+            var isTouch = false //var to indicate current input type (is touch versus no touch)
+            var isTouchTimer
+            var curRootClass = '' //var indicating current document root class ("can-touch" or "")
+
+            function addtouchclass(e) {
+                clearTimeout(isTouchTimer)
+                isTouch = true
+                if (curRootClass != 'can-touch') { //add "can-touch' class if it's not already present
+                    curRootClass = 'can-touch'
+                    document.documentElement.classList.add(curRootClass)
+                }
+                isTouchTimer = setTimeout(function() {
+                    isTouch = false
+                }, 500) //maintain "istouch" state for 500ms so removetouchclass doesn't get fired immediately following a touch event
+            }
+
+            function removetouchclass(e) {
+                if (!isTouch && curRootClass == 'can-touch') { //remove 'can-touch' class if not triggered by a touch event and class is present
+                    isTouch = false
+                    curRootClass = ''
+                    document.documentElement.classList.remove('can-touch')
+                }
+            }
+
+            document.addEventListener('touchstart', addtouchclass, false) //this event only gets called when input type is touch
+            document.addEventListener('mouseover', removetouchclass, false) //this event gets called when input type is everything from touch to mouse/ trackpad
+        })();
+    </script>
+    </body>
+</html>
