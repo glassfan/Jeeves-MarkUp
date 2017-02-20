@@ -23,6 +23,7 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body data-spy="scroll" data-target="nav">
@@ -144,9 +145,11 @@
                     </div>
                     <!-- /.row -->
                     <div class="row">
-                        <div class="camera-screen">
+                        <div id="camera-screen">
                             <div class="col-md-8">
-                                <img class="center-block" src="http://192.168.1.2:8081/stream?topic=/camera/face" width="640">
+                                <!-- <img class="center-block" src="http://192.168.1.2:8081/stream?topic=/camera/face" width="640"> -->
+                                <!-- By default, the video streamer is at port 8080 -->
+                                <img class="center-block" src="http://localhost:8080/stream?topic=/usb_cam/image_raw" width="640" />
                             </div>
                         </div>
                         <!-- /.col -->
