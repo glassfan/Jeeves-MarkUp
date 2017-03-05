@@ -1,0 +1,777 @@
+Type: diagnostic_msgs/DiagnosticArray
+
+Publishers: 
+ * /sick_lms_200 (http://192.168.1.2:48290/)
+ * /camera/camera_nodelet_manager (http://192.168.1.2:59716/)
+ * /joystick (http://192.168.1.2:57493/)
+
+Subscribers: None
+
+-------
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+diagnostic_msgs/DiagnosticStatus[] status
+  byte OK=0
+  byte WARN=1
+  byte ERROR=2
+  byte STALE=3
+  byte level
+  string name
+  string message
+  string hardware_id
+  diagnostic_msgs/KeyValue[] values
+    string key
+    string value
+
+header: 
+  seq: 3873
+  stamp: 
+    secs: 1488159811
+    nsecs: 520721697
+  frame_id: ''
+status: 
+  - 
+    level: 0
+    name: sick_lms_200: /scan topic status
+    message: Desired frequency met; Timestamps are reasonable.
+    hardware_id: SICK LMS
+    values: 
+      - 
+        key: Events in window
+        value: 2263
+      - 
+        key: Events since startup
+        value: 291898
+      - 
+        key: Duration of window (s)
+        value: 30.181571
+      - 
+        key: Actual frequency (Hz)
+        value: 74.979529
+      - 
+        key: Target frequency (Hz)
+        value: 75.000000
+      - 
+        key: Minimum acceptable frequency (Hz)
+        value: 52.500000
+      - 
+        key: Maximum acceptable frequency (Hz)
+        value: 97.500000
+      - 
+        key: Earliest timestamp delay:
+        value: 0.006673
+      - 
+        key: Latest timestamp delay:
+        value: 0.006684
+      - 
+        key: Earliest acceptable timestamp delay:
+        value: 0.000000
+      - 
+        key: Latest acceptable timestamp delay:
+        value: 0.200000
+      - 
+        key: Late diagnostic update count:
+        value: 0
+      - 
+        key: Early diagnostic update count:
+        value: 0
+      - 
+        key: Zero seen diagnostic update count:
+        value: 0
+---
+header: 
+  seq: 3894
+  stamp: 
+    secs: 1488159811
+    nsecs: 789703734
+  frame_id: ''
+status: 
+  - 
+    level: 0
+    name: joystick: Joystick Driver Status
+    message: OK
+    hardware_id: none
+    values: 
+      - 
+        key: topic
+        value: /joy
+      - 
+        key: device
+        value: /dev/input/js0
+      - 
+        key: dead zone
+        value: 0.05
+      - 
+        key: autorepeat rate (Hz)
+        value: 0
+      - 
+        key: coalesce interval (s)
+        value: 0.001
+      - 
+        key: recent joystick event rate (Hz)
+        value: 0
+      - 
+        key: recent publication rate (Hz)
+        value: 0
+      - 
+        key: subscribers
+        value: 1
+---
+header: 
+  seq: 3876
+  stamp: 
+    secs: 1488159811
+    nsecs: 850550789
+  frame_id: ''
+status: []
+---
+Type: battery_monitor/BatteryStatus
+
+Publishers: 
+ * /battery_monitor_node (http://192.168.1.2:38867/)
+
+Subscribers: 
+ * /web_ui (http://192.168.1.2:60134/)
+
+
+float32 amps
+float32 amp_hours
+
+amps: 5.53102064133
+amp_hours: 5.53309822083
+---
+amps: 5.53204059601
+amp_hours: 5.53325223923
+---
+amps: 5.53469371796
+amp_hours: 5.53340578079
+---
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /fused_base_odometry (http://192.168.1.2:42733/)
+
+Subscribers: 
+ * /move_base (http://192.168.1.2:45591/)
+
+
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string child_frame_id
+geometry_msgs/PoseWithCovariance pose
+  geometry_msgs/Pose pose
+    geometry_msgs/Point position
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Quaternion orientation
+      float64 x
+      float64 y
+      float64 z
+      float64 w
+  float64[36] covariance
+geometry_msgs/TwistWithCovariance twist
+  geometry_msgs/Twist twist
+    geometry_msgs/Vector3 linear
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Vector3 angular
+      float64 x
+      float64 y
+      float64 z
+  float64[36] covariance
+
+header: 
+  seq: 219168
+  stamp: 
+    secs: 1488160303
+    nsecs: 25492906
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961477497976
+      w: 0.274883649723
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0187289349591
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219169
+  stamp: 
+    secs: 1488160303
+    nsecs: 45984983
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961439177622
+      w: 0.275017649857
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0314164538736
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219170
+  stamp: 
+    secs: 1488160303
+    nsecs: 65803050
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961434868045
+      w: 0.27503271534
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0022758702829
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219171
+  stamp: 
+    secs: 1488160303
+    nsecs: 85397005
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961450600625
+      w: 0.27497771284
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0663319906878
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219172
+  stamp: 
+    secs: 1488160303
+    nsecs: 106158971
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961584187554
+      w: 0.274510200624
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0675343500158
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219173
+  stamp: 
+    secs: 1488160303
+    nsecs: 126348018
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961454797668
+      w: 0.274963037591
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0176981704293
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219174
+  stamp: 
+    secs: 1488160303
+    nsecs: 145750999
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961327020875
+      w: 0.27540943872
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0722781422734
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219175
+  stamp: 
+    secs: 1488160303
+    nsecs: 165491104
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961477290137
+      w: 0.274884376693
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0461739376254
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219176
+  stamp: 
+    secs: 1488160303
+    nsecs: 185825109
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961507893902
+      w: 0.27477730977
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0171620406237
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219177
+  stamp: 
+    secs: 1488160303
+    nsecs: 205562114
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961433259214
+      w: 0.275038339285
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0772899611261
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219178
+  stamp: 
+    secs: 1488160303
+    nsecs: 225853919
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961492433346
+      w: 0.274831403989
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0265949360256
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219179
+  stamp: 
+    secs: 1488160303
+    nsecs: 246382951
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961558161606
+      w: 0.274601350777
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.033362559134
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219180
+  stamp: 
+    secs: 1488160303
+    nsecs: 265223979
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961562075339
+      w: 0.27458764588
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0020428334534
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219181
+  stamp: 
+    secs: 1488160303
+    nsecs: 285612106
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.96141256913
+      w: 0.275110653955
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0134638692394
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219182
+  stamp: 
+    secs: 1488160303
+    nsecs: 305331945
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961432997172
+      w: 0.275039255287
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0112893300109
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219183
+  stamp: 
+    secs: 1488160303
+    nsecs: 326423883
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961641665385
+      w: 0.274308781111
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0917780833662
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219184
+  stamp: 
+    secs: 1488160303
+    nsecs: 345396995
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961526235207
+      w: 0.274713121288
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0590234323889
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219185
+  stamp: 
+    secs: 1488160303
+    nsecs: 366045951
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961470373657
+      w: 0.274908567672
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0151173990848
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---
+header: 
+  seq: 219186
+  stamp: 
+    secs: 1488160303
+    nsecs: 385829925
+  frame_id: /odom
+child_frame_id: /base_footprint
+pose: 
+  pose: 
+    position: 
+      x: 0.699015911092
+      y: 0.0202414967697
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.961430350093
+      w: 0.275048508305
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: -0.0213442288244
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+---

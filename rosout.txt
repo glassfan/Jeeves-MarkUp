@@ -1,0 +1,406 @@
+header: 
+  seq: 4
+  stamp: 
+    secs: 1488155905
+    nsecs: 840259865
+  frame_id: ''
+level: 2
+name: /camera/rectify_mono
+msg: waitForService: Service [/camera/camera_nodelet_manager/load_nodelet] is now available.
+file: /tmp/buildd/ros-indigo-roscpp-1.11.10-0trusty-20150220-1832/src/libros/service.cpp
+function: service::waitForService
+line: 122
+topics: ['/rosout']
+---
+header: 
+  seq: 5
+  stamp: 
+    secs: 1488155905
+    nsecs: 824307646
+  frame_id: ''
+level: 2
+name: /camera/debayer
+msg: waitForService: Service [/camera/camera_nodelet_manager/load_nodelet] is now available.
+file: /tmp/buildd/ros-indigo-roscpp-1.11.10-0trusty-20150220-1832/src/libros/service.cpp
+function: service::waitForService
+line: 122
+topics: ['/rosout']
+---
+header: 
+  seq: 7
+  stamp: 
+    secs: 1488155905
+    nsecs: 830778293
+  frame_id: ''
+level: 2
+name: /camera/driver
+msg: waitForService: Service [/camera/camera_nodelet_manager/load_nodelet] is now available.
+file: /tmp/buildd/ros-indigo-roscpp-1.11.10-0trusty-20150220-1832/src/libros/service.cpp
+function: service::waitForService
+line: 122
+topics: ['/rosout']
+---
+header: 
+  seq: 15
+  stamp: 
+    secs: 1488156507
+    nsecs: 415225874
+  frame_id: ''
+level: 8
+name: /camera/camera_nodelet_manager
+msg: Client [/web_video_server] wants topic /camera/rgb/image_color/compressed to have datatype/md5sum [sensor_msgs/Image/060021388200f6f0f447d0fcd9c64743], but our version has [sensor_msgs/CompressedImage/8f7a12909da2c9d3332d540a0977563f]. Dropping connection.
+file: /tmp/buildd/ros-indigo-roscpp-1.11.10-0trusty-20150220-1832/src/libros/publication.cpp
+function: Publication::validateHeader
+line: 498
+topics: ['/rosout', '/camera/debayer/parameter_descriptions', '/camera/debayer/parameter_updates', '/camera/rgb/image_mono/compressedDepth', '/camera/rgb/image_mono/compressedDepth/parameter_descriptions', '/camera/rgb/image_mono/compressedDepth/parameter_updates', '/camera/rgb/image_mono/compressed', '/camera/rgb/image_mono/compressed/parameter_descriptions', '/camera/rgb/image_mono/compressed/parameter_updates', '/camera/rgb/image_mono', '/camera/rgb/image_mono/theora', '/camera/rgb/image_mono/theora/parameter_descriptions', '/camera/rgb/image_mono/theora/parameter_updates', '/camera/rgb/image_color/compressedDepth', '/camera/rgb/image_color/compressedDepth/parameter_descriptions', '/camera/rgb/image_color/compressedDepth/parameter_updates', '/camera/rgb/image_color/compressed', '/camera/rgb/image_color/compressed/parameter_descriptions', '/camera/rgb/image_color/compressed/parameter_updates', '/camera/rgb/image_color', '/camera/rgb/image_color/theora', '/camera/rgb/image_color/theora/parameter_descriptions', '/camera/rgb/image_color/theora/parameter_updates', '/camera/rectify_mono/parameter_descriptions', '/camera/rectify_mono/parameter_updates', '/camera/rgb/image_rect_mono/compressedDepth', '/camera/rgb/image_rect_mono/compressedDepth/parameter_descriptions', '/camera/rgb/image_rect_mono/compressedDepth/parameter_updates', '/camera/rgb/image_rect_mono/compressed', '/camera/rgb/image_rect_mono/compressed/parameter_descriptions', '/camera/rgb/image_rect_mono/compressed/parameter_updates', '/camera/rgb/image_rect_mono', '/camera/rgb/image_rect_mono/theora', '/camera/rgb/image_rect_mono/theora/parameter_descriptions', '/camera/rgb/image_rect_mono/theora/parameter_updates', '/camera/rectify_color/parameter_descriptions', '/camera/driver/parameter_descriptions', '/camera/rectify_color/parameter_updates', '/camera/driver/parameter_updates', '/camera/rgb/image_rect_color/compressedDepth', '/camera/rgb/image_rect_color/compressedDepth/parameter_descriptions', '/camera/rgb/image_rect_color/compressedDepth/parameter_updates', '/camera/rgb/image_rect_color/compressed', '/camera/rgb/image_rect_color/compressed/parameter_descriptions', '/camera/rgb/image_rect_color/compressed/parameter_updates', '/camera/rgb/image_rect_color', '/camera/rgb/image_rect_color/theora', '/camera/rgb/image_rect_color/theora/parameter_descriptions', '/camera/rgb/image_rect_color/theora/parameter_updates', '/camera/rectify_ir/parameter_descriptions', '/camera/rectify_ir/parameter_updates', '/diagnostics', '/camera/ir/image_rect_ir/compressedDepth', '/camera/ir/image_rect_ir/compressedDepth/parameter_descriptions', '/camera/ir/image_rect_ir/compressedDepth/parameter_updates', '/camera/rgb/image_raw/compressedDepth', '/camera/rgb/image_raw/compressedDepth/parameter_descriptions', '/camera/rgb/image_raw/compressedDepth/parameter_updates', '/camera/ir/image_rect_ir/compressed', '/camera/ir/image_rect_ir/compressed/parameter_descriptions', '/camera/ir/image_rect_ir/compressed/parameter_updates', '/camera/rgb/image_raw/compressed', '/camera/rgb/image_raw/compressed/parameter_descriptions', '/camera/rgb/image_raw/compressed/parameter_updates', '/camera/ir/image_rect_ir', '/camera/rgb/image_raw', '/camera/ir/image_rect_ir/theora', '/camera/ir/image_rect_ir/theora/parameter_descriptions', '/camera/ir/image_rect_ir/theora/parameter_updates', '/camera/rgb/image_raw/theora', '/camera/rgb/image_raw/theora/parameter_descriptions', '/camera/rgb/image_raw/theora/parameter_updates', '/camera/rgb/camera_info', '/camera/depth_rectify_depth/parameter_descriptions', '/camera/depth_rectify_depth/parameter_updates', '/camera/ir/image_raw/compressedDepth', '/camera/ir/image_raw/compressedDepth/parameter_descriptions', '/camera/ir/image_raw/compressedDepth/parameter_updates', '/camera/depth/image_rect_raw/compressedDepth', '/camera/depth/image_rect_raw/compressedDepth/parameter_descriptions', '/camera/depth/image_rect_raw/compressedDepth/parameter_updates', '/camera/ir/image_raw/compressed', '/camera/depth/image_rect_raw/compressed', '/camera/ir/image_raw/compressed/parameter_descriptions', '/camera/depth/image_rect_raw/compressed/parameter_descriptions', '/camera/ir/image_raw/compressed/parameter_updates', '/camera/depth/image_rect_raw/compressed/parameter_updates', '/camera/ir/image_raw', '/camera/depth/image_rect_raw', '/camera/ir/image_raw/theora', '/camera/ir/image_raw/theora/parameter_descriptions', '/camera/ir/image_raw/theora/parameter_updates', '/camera/ir/camera_info', '/camera/depth/image_rect_raw/theora', '/camera/depth/image_rect_raw/theora/parameter_descriptions', '/camera/depth/image_rect_raw/theora/parameter_updates', '/camera/depth/image_raw/compressedDepth', '/camera/depth/image_raw/compressedDepth/parameter_descriptions', '/camera/depth/image_raw/compressedDepth/parameter_updates', '/camera/depth/image_raw/compressed', '/camera/depth/image_raw/compressed/parameter_descriptions', '/camera/depth/image_raw/compressed/parameter_updates', '/camera/depth/image_raw', '/camera/depth/image_rect/compressedDepth', '/camera/depth/image_rect/compressedDepth/parameter_descriptions', '/camera/depth/image_rect/compressedDepth/parameter_updates', '/camera/depth/image_raw/theora', '/camera/depth/image_raw/theora/parameter_descriptions', '/camera/depth/image_raw/theora/parameter_updates', '/camera/depth/camera_info', '/camera/projector/camera_info', '/camera/depth/image_rect/compressed', '/camera/depth/image_rect/compressed/parameter_descriptions', '/camera/depth/image_rect/compressed/parameter_updates', '/camera/depth_registered/image_raw/compressedDepth', '/camera/depth_registered/image_raw/compressedDepth/parameter_descriptions', '/camera/depth_registered/image_raw/compressedDepth/parameter_updates', '/camera/depth/image_rect', '/camera/depth_registered/image_raw/compressed', '/camera/depth_registered/image_raw/compressed/parameter_descriptions', '/camera/depth_registered/image_raw/compressed/parameter_updates', '/camera/depth/image_rect/theora', '/camera/depth/image_rect/theora/parameter_descriptions', '/camera/depth/image_rect/theora/parameter_updates', '/camera/depth_registered/image_raw', '/camera/depth_registered/image_raw/theora', '/camera/depth_registered/image_raw/theora/parameter_descriptions', '/camera/depth_registered/image_raw/theora/parameter_updates', '/camera/depth_registered/camera_info', '/camera/depth/image/compressedDepth', '/camera/depth/image/compressedDepth/parameter_descriptions', '/camera/depth/image/compressedDepth/parameter_updates', '/camera/depth/image/compressed', '/camera/depth/image/compressed/parameter_descriptions', '/camera/depth/image/compressed/parameter_updates', '/camera/depth/image', '/camera/depth/image/theora', '/camera/depth/image/theora/parameter_descriptions', '/camera/depth/image/theora/parameter_updates', '/camera/depth/points', '/camera/depth_registered/sw_registered/image_rect_raw/compressedDepth', '/camera/depth_registered/sw_registered/image_rect_raw/compressedDepth/parameter_descriptions', '/camera/depth_registered/sw_registered/image_rect_raw/compressedDepth/parameter_updates', '/camera/depth_registered/sw_registered/image_rect_raw/compressed', '/camera/depth_registered/sw_registered/image_rect_raw/compressed/parameter_descriptions', '/camera/depth_registered/sw_registered/image_rect_raw/compressed/parameter_updates', '/camera/depth_registered/sw_registered/image_rect_raw', '/camera/depth_registered/sw_registered/image_rect_raw/theora', '/camera/depth_registered/sw_registered/image_rect_raw/theora/parameter_descriptions', '/camera/depth_registered/sw_registered/image_rect_raw/theora/parameter_updates', '/camera/depth_registered/sw_registered/camera_info', '/camera/depth_registered/points', '/camera/depth_registered_rectify_depth/parameter_descriptions', '/camera/depth_registered_rectify_depth/parameter_updates', '/camera/depth_registered/hw_registered/image_rect_raw/compressedDepth', '/camera/depth_registered/hw_registered/image_rect_raw/compressedDepth/parameter_descriptions', '/camera/depth_registered/hw_registered/image_rect_raw/compressedDepth/parameter_updates', '/camera/depth_registered/hw_registered/image_rect_raw/compressed', '/camera/depth_registered/hw_registered/image_rect_raw/compressed/parameter_descriptions', '/camera/depth_registered/hw_registered/image_rect_raw/compressed/parameter_updates', '/camera/depth_registered/hw_registered/image_rect_raw', '/camera/depth_registered/hw_registered/image_rect_raw/theora', '/camera/depth_registered/hw_registered/image_rect_raw/theora/parameter_descriptions', '/camera/depth_registered/hw_registered/image_rect_raw/theora/parameter_updates', '/camera/depth/disparity', '/camera/depth_registered/disparity']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488155905
+    nsecs: 887070572
+  frame_id: ''
+level: 2
+name: /camera/rectify_color
+msg: /camera/image_rect -> /camera/rgb/image_rect_color
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488155906
+    nsecs: 133176043
+  frame_id: ''
+level: 2
+name: /camera/depth_rectify_depth
+msg: /camera/image_rect -> /camera/depth/image_rect_raw
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155905
+    nsecs: 999601543
+  frame_id: ''
+level: 2
+name: /camera/rectify_ir
+msg: Loading nodelet /camera/rectify_ir of type image_proc/rectify to manager camera_nodelet_manager with the following remappings:
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 195
+topics: ['/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155906
+    nsecs: 376850394
+  frame_id: ''
+level: 2
+name: /camera/depth_metric
+msg: Loading nodelet /camera/depth_metric of type depth_image_proc/convert_metric to manager camera_nodelet_manager with the following remappings:
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 195
+topics: ['/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155906
+    nsecs: 255074521
+  frame_id: ''
+level: 2
+name: /camera/depth_metric_rect
+msg: Loading nodelet /camera/depth_metric_rect of type depth_image_proc/convert_metric to manager camera_nodelet_manager with the following remappings:
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 195
+topics: ['/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155906
+    nsecs: 502244184
+  frame_id: ''
+level: 2
+name: /camera/depth_points
+msg: Loading nodelet /camera/depth_points of type depth_image_proc/point_cloud_xyz to manager camera_nodelet_manager with the following remappings:
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 195
+topics: ['/rosout']
+---
+header: 
+  seq: 3
+  stamp: 
+    secs: 1488155906
+    nsecs: 627036599
+  frame_id: ''
+level: 2
+name: /camera/register_depth_rgb
+msg: /camera/depth_registered/image_rect -> /camera/depth_registered/sw_registered/image_rect_raw
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 4
+  stamp: 
+    secs: 1488155906
+    nsecs: 748142114
+  frame_id: ''
+level: 2
+name: /camera/points_xyzrgb_sw_registered
+msg: /camera/rgb/image_rect_color -> /camera/rgb/image_rect_color
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 4
+  stamp: 
+    secs: 1488155906
+    nsecs: 990754178
+  frame_id: ''
+level: 2
+name: /camera/points_xyzrgb_hw_registered
+msg: /camera/rgb/image_rect_color -> /camera/rgb/image_rect_color
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155906
+    nsecs: 868097318
+  frame_id: ''
+level: 2
+name: /camera/depth_registered_rectify_depth
+msg: Loading nodelet /camera/depth_registered_rectify_depth of type image_proc/rectify to manager camera_nodelet_manager with the following remappings:
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 195
+topics: ['/rosout']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488155907
+    nsecs: 108491492
+  frame_id: ''
+level: 2
+name: /camera/disparity_depth
+msg: /camera/left/image_rect -> /camera/depth/image_rect_raw
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 3
+  stamp: 
+    secs: 1488155907
+    nsecs: 351194725
+  frame_id: ''
+level: 2
+name: /camera/disparity_registered_hw
+msg: /camera/right -> /camera/projector
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488155907
+    nsecs: 229524434
+  frame_id: ''
+level: 2
+name: /camera/disparity_registered_sw
+msg: /camera/left/image_rect -> /camera/depth_registered/sw_registered/image_rect_raw
+file: /tmp/buildd/ros-indigo-nodelet-1.9.2-0trusty-20150220-2124/src/nodelet.cpp
+function: loadNodelet
+line: 201
+topics: ['/rosout']
+---
+header: 
+  seq: 18
+  stamp: 
+    secs: 1488155910
+    nsecs: 275183548
+  frame_id: ''
+level: 2
+name: /motor_controller_front
+msg: Motor controller not responding.
+file: /home/mcecsbot/src/roboticsclub-mcecsbot/src/ros/src/third-party/clearpath/roboteq/roboteq_driver/src/controller.cpp
+function: Controller::connect
+line: 90
+topics: ['/rosout', '/motor_controller_front/status', '/motor_1/feedback', '/motor_4/feedback']
+---
+header: 
+  seq: 18
+  stamp: 
+    secs: 1488155910
+    nsecs: 432048048
+  frame_id: ''
+level: 2
+name: /motor_controller_rear
+msg: Motor controller not responding.
+file: /home/mcecsbot/src/roboticsclub-mcecsbot/src/ros/src/third-party/clearpath/roboteq/roboteq_driver/src/controller.cpp
+function: Controller::connect
+line: 90
+topics: ['/rosout', '/motor_controller_rear/status', '/motor_2/feedback', '/motor_3/feedback']
+---
+header: 
+  seq: 78
+  stamp: 
+    secs: 1488160413
+    nsecs: 691274881
+  frame_id: ''
+level: 2
+name: /battery_monitor_node
+msg: 6.32979260204
+file: battery_monitor_node.py
+function: run
+line: 89
+topics: ['/battery_status', '/rosout']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155918
+    nsecs: 239681541
+  frame_id: ''
+level: 2
+name: /sick_lms_200
+msg: Variant setup not requested or identical to actual (180, 0.500000)
+file: /tmp/buildd/ros-indigo-sicktoolbox-wrapper-2.5.3-1trusty-20150221-0322/ros/sicklms/sicklms.cpp
+function: main
+line: 258
+topics: ['/rosout', '/diagnostics', '/scan']
+---
+header: 
+  seq: 0
+  stamp: 
+    secs: 1488155910
+    nsecs: 25877679
+  frame_id: ''
+level: 2
+name: /joystick
+msg: Opened joystick: /dev/input/js0. deadzone_: 0.050000.
+file: /tmp/buildd/ros-indigo-joy-1.10.0-0trusty-20150221-1413/src/joy_node.cpp
+function: main
+line: 181
+topics: ['/rosout', '/diagnostics', '/joy']
+---
+header: 
+  seq: 1
+  stamp: 
+    secs: 1488155915
+    nsecs: 706688171
+  frame_id: ''
+level: 4
+name: /laser_scan_matcher_node
+msg: Detected jump back in time. Clearing TF buffer.
+file: /tmp/buildd/ros-indigo-tf2-ros-0.5.7-0trusty-20150222-1455/src/transform_listener.cpp
+function: TransformListener::subscription_callback_impl
+line: 106
+topics: ['/rosout', '/tf', '/pose2D', '/pose_stamped']
+---
+header: 
+  seq: 5
+  stamp: 
+    secs: 1488155915
+    nsecs: 707293987
+  frame_id: ''
+level: 4
+name: /waypoint_manager
+msg: Saw a negative time change of -2.129236 seconds, clearing the tf buffer.
+file: listener.py
+function: transformlistener_callback
+line: 251
+topics: ['/initialpose', '/rosout', '/tf']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488155912
+    nsecs: 621650410
+  frame_id: ''
+level: 2
+name: /map_server
+msg: Sending map
+file: /tmp/buildd/ros-indigo-map-server-1.12.0-0trusty-20150222-1648/src/main.cpp
+function: mapCallback
+line: 193
+topics: ['/rosout', '/map_metadata', '/map']
+---
+header: 
+  seq: 7
+  stamp: 
+    secs: 1488155920
+    nsecs: 300275087
+  frame_id: ''
+level: 2
+name: /nav_test
+msg: Connected to waypoint_manager service.
+file: nav_test.py
+function: run
+line: 49
+topics: ['/nav_test/last_message', '/move_base/result', '/move_base/feedback', '/rosout', '/tf', '/move_base/status', '/move_base/goal', '/move_base/cancel', '/nav_test/cmd', '/nav_test/progress']
+---
+header: 
+  seq: 24
+  stamp: 
+    secs: 1488159207
+    nsecs: 131906748
+  frame_id: ''
+level: 4
+name: /move_base
+msg: The origin for the sensor at (0.50, -0.01) is out of map bounds. So, the costmap cannot raytrace for it.
+file: /tmp/buildd/ros-indigo-costmap-2d-1.12.0-0trusty-20150307-2256/plugins/obstacle_layer.cpp
+function: ObstacleLayer::raytraceFreespace
+line: 487
+topics: ['/rosout', '/cmd_vel', '/move_base/current_goal', '/move_base/goal', '/move_base/global_costmap/static_layer/parameter_descriptions', '/move_base/global_costmap/static_layer/parameter_updates', '/move_base/global_costmap/obstacle_layer/parameter_descriptions', '/move_base/global_costmap/obstacle_layer/parameter_updates', '/move_base/global_costmap/obstacle_layer_footprint/footprint_stamped', '/move_base/global_costmap/obstacle_layer_footprint/parameter_descriptions', '/move_base/global_costmap/obstacle_layer_footprint/parameter_updates', '/move_base/global_costmap/inflation_layer/parameter_descriptions', '/move_base/global_costmap/inflation_layer/parameter_updates', '/move_base/global_costmap/costmap', '/move_base/global_costmap/costmap_updates', '/move_base/global_costmap/parameter_descriptions', '/move_base/global_costmap/parameter_updates', '/move_base/NavfnROS/plan', '/move_base/local_costmap/obstacle_layer/parameter_descriptions', '/move_base/local_costmap/obstacle_layer/parameter_updates', '/move_base/local_costmap/obstacle_layer_footprint/footprint_stamped', '/move_base/local_costmap/obstacle_layer_footprint/parameter_descriptions', '/move_base/local_costmap/obstacle_layer_footprint/parameter_updates', '/move_base/local_costmap/inflation_layer/parameter_descriptions', '/move_base/local_costmap/inflation_layer/parameter_updates', '/move_base/local_costmap/costmap', '/move_base/local_costmap/costmap_updates', '/move_base/local_costmap/parameter_descriptions', '/move_base/local_costmap/parameter_updates', '/move_base/DWAPlannerROS/global_plan', '/move_base/DWAPlannerROS/local_plan', '/move_base/DWAPlannerROS/cost_cloud', '/move_base/DWAPlannerROS/trajectory_cloud', '/move_base/DWAPlannerROS/parameter_descriptions', '/move_base/DWAPlannerROS/parameter_updates', '/move_base/result', '/move_base/feedback', '/move_base/status', '/move_base/parameter_descriptions', '/move_base/parameter_updates']
+---
+header: 
+  seq: 5
+  stamp: 
+    secs: 1488155915
+    nsecs: 709706062
+  frame_id: ''
+level: 4
+name: /amcl
+msg: Detected jump back in time. Clearing TF buffer.
+file: /tmp/buildd/ros-indigo-tf2-ros-0.5.7-0trusty-20150222-1455/src/transform_listener.cpp
+function: TransformListener::subscription_callback_impl
+line: 106
+topics: ['/rosout', '/tf', '/amcl_pose', '/particlecloud', '/amcl/parameter_descriptions', '/amcl/parameter_updates']
+---
+header: 
+  seq: 2
+  stamp: 
+    secs: 1488160457
+    nsecs: 967869997
+  frame_id: ''
+level: 4
+name: /qrcode_pos
+msg: Inbound TCP/IP connection failed: connection from sender terminated before handshake header received. 0 bytes were received. Please check sender for additional details.
+file: tcpros_base.py
+function: _tcp_server_callback
+line: 351
+topics: ['/rosout']
+---

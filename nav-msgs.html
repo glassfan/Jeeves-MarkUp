@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <!-- include jquery library ... required in the sample -->
+    <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js">
+    </script>
+
+    <!-- include the roslibjs library ... required -->
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js">
+    </script>
+
+
+
+    <script type="text/javascript">
+        var ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090' // url to your rosbridge server
+            //url: 'ws://192.168.1.2:9090' // url to your rosbridge server
+        });
+
+        ros.on('connection', function() {
+            console.log('Connected to websocket server.');
+        });
+
+        ros.on('error', function(error) {
+            console.log('Error connecting to websocket server: ', error);
+        });
+
+        ros.on('close', function() {
+            console.log('Connection to websocket server closed.');
+        });
+
+        var exampleTopic = new ROSLIB.Topic({
+            ros: ros,
+            name: '/test_topic', // use a sensible namespace
+            messageType: 'std_msgs/String' //Create a pose object (geometry_msg(s)/Pose)
+
+        });
+
+        var nav_msgs = new ROSLIB.Topic({
+            ros: ros,
+            name: '* /fused_base_odometry', // use a sensible namespace
+            messageType: 'nav_msgs/Odometry' //
+            // messageType: 'nav_msgs/Odometry/fused_base_odometry/geometry_msgs/PoseWithCovariance/geometry_msgs/Pose/geometry_msgs/Point/geometry_msgs/Quaternion orientation/geometry_msgs/TwistWithCovariance/geometry_msgs/Twist/geometry_msgs/Vector3/geometry_msgs/Vector3'
+        });
+        function publishEncoded(topic, obj) {
+            var msg = new ROSLIB.Message({
+
+                data: JSON.stringify(obj)
+            });
+            topic.publish(msg);
+        }
+        function decodeMessage(msg) {
+            return JSON.parse(msg.data);
+        }
+        nav_msgs.subscribe(function(msg) {
+            console.log(msg);
+            var position =
+                ' x: ' + msg.position.x +
+                ' y: ' + msg.position.y +
+                ' z: ' + msg.position.z;
+            var orientation =
+                ' x: ' + msg.orientation.x +
+                ' y: ' + msg.orientation.y +
+                ' z: ' + msg.orientation.z;
+
+            var linear =
+                ' x: ' + msg.linear.x +
+                ' y: ' + msg.linear.y +
+                ' z: ' + msg.linear.z;
+            var angular =
+                ' x: ' + msg.angular.x +
+                ' y: ' + msg.angular.y +
+                ' z: ' + msg.angular.z;
+
+            $('#topic_data').text(position + orientation + linear + angular);
+            $('#lin1').text(msg.position.x);
+            $('#lin2').text(msg.position.y);
+            $('#lin3').text(msg.position.z);
+            $('#lin4').text(msg.orientation.x);
+            $('#lin5').text( msg.orientation.y);
+            $('#lin6').text(msg.orientation.z);
+            $('#lin7').text(msg.linear.x);
+            $('#lin8').text(msg.linear.y);
+            $('#lin9').text(msg.linear.z);
+            $('#lin10').text(msg.angular.x);
+            $('#lin11').text(msg.angular.y);
+            $('#lin12').text( msg.angular.z;);
+
+
+        });
+
+        $(document).ready(function() {
+            console.log("Hello there!");
+        })
+    </script>
+</head>
+
+<body>
+
+    <div>Topic data: <span id="topic_data"></span></div>
+    <br />
+    <br />
+    <h2>Position</h2>
+    <div>x: <span id="lin1"></span></div>
+    <div>y: <span id="lin2"></span></div>
+    <div>z: <span id="lin3"></span></div>
+    <h2>Orientation</h2>
+    <div>x: <span id="lin4"></span></div>
+    <div>y: <span id="lin5"></span></div>
+    <div>z: <span id="lin6"></span></div>
+    <h2>Vector3 Linear</h2>
+    <div>x: <span id="lin7"></span></div>
+    <div>y: <span id="lin8"></span></div>
+    <div>z: <span id="lin9"></span></div>
+    <h2>Vector3 Angular</h2>
+    <div>x: <span id="lin10"></span></div>
+    <div>x: <span id="lin11"></span></div>
+    <div>z: <span id="lin12"></span></div>
+
+</body>
+
+</html>
