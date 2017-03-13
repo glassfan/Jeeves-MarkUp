@@ -70,17 +70,23 @@
 
           status.msg.sick_lms.values.forEach(function(element){console.log(element); });
 
-
+          /*
+            Object.keys(sick_lms).forEach(function(element);{
             $('#topic_data').text(sick_lms);
-
             $('#lin1').text(msg.sick_lms.byte);
             $('#lin2').text(msg.sick_lms.message);
             $('#lin3').text(msg.sick_lms.hardware_id);
             $('#lin4').text(msg.sick_lms.values.key);
             $('#lin5').text( msg.sick_lms.values.value);
-
-
-
+          });
+          */
+          for (var key in sick_lms) {
+            $('#topic_data').text(sick_lms);
+            $('#lin1').text(msg.sick_lms.byte);
+            $('#lin2').text(msg.sick_lms.message);
+            $('#lin3').text(msg.sick_lms.hardware_id);
+            $('#lin4').text(msg.sick_lms.values.key);
+            $('#lin5').text( msg.sick_lms.values.value);
         });
 
         $(document).ready(function() {
@@ -100,7 +106,7 @@
     <div>hardware_id: <span id="lin3"></span></div>
     <div>key: <span id="lin4"></span></div>
     <div>value: <span id="lin5"></span></div>
-    
+
 
 </body>
 
