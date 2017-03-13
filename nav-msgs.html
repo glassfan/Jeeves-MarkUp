@@ -3,20 +3,23 @@
 <head>
     <!-- include jquery library ... required in the sample -->
     <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
-    <script src="assets/js/jquery.min.js"></script>
+    <!--<script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js">
-    </script>
+    </script>-->
 
     <!-- include the roslibjs library ... required -->
-    <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js">
-    </script>
+    <!--<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js">
+    </script>-->
 
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="/static/js/roslib.min.js"></script>
 
 
     <script type="text/javascript">
         var ros = new ROSLIB.Ros({
-            url: 'ws://localhost:9090' // url to your rosbridge server
-            //url: 'ws://192.168.1.2:9090' // url to your rosbridge server
+            //url: 'ws://localhost:9090' // url to your rosbridge server
+            url: 'ws://192.168.1.2:9090' // url to your rosbridge server
         });
 
         ros.on('connection', function() {
@@ -40,7 +43,7 @@
 
         var nav_msgs = new ROSLIB.Topic({
             ros: ros,
-            name: '* /fused_base_odometry', // use a sensible namespace
+            name: '/odom', // use a sensible namespace
             messageType: 'nav_msgs/Odometry' //
             // messageType: 'nav_msgs/Odometry/fused_base_odometry/geometry_msgs/PoseWithCovariance/geometry_msgs/Pose/geometry_msgs/Point/geometry_msgs/Quaternion orientation/geometry_msgs/TwistWithCovariance/geometry_msgs/Twist/geometry_msgs/Vector3/geometry_msgs/Vector3'
         });
@@ -86,7 +89,7 @@
             $('#lin9').text(msg.twist.twist.linear.z);
             $('#lin10').text(msg.twist.twist.angular.x);
             $('#lin11').text(msg.twist.twist.angular.y);
-            $('#lin12').text( msg.twist.twist.angular.z;);
+            $('#lin12').text( msg.twist.twist.angular.z);
 
 
         });

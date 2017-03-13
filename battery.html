@@ -2,21 +2,24 @@
 
 <head>
     <!-- include jquery library ... required in the sample -->
-    <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js">
+    <!--script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script-->
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <!--script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"-->
+    <script type="text/javascript" src="/static/js/eventemitter2.min.js">
     </script>
 
     <!-- include the roslibjs library ... required -->
-    <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js">
+    <!--script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"-->
+    <script type="text/javascript" src="/static/js/roslib.min.js">
+    <!--script src="assets/js/roslib.min.js"></script-->
     </script>
 
 
 
     <script type="text/javascript">
         var ros = new ROSLIB.Ros({
-            url: 'ws://localhost:9090' // url to your rosbridge server
-            //url: 'ws://192.168.1.2:9090' // url to your rosbridge server
+            //url: 'ws://localhost:9090' // url to your rosbridge server
+            url: 'ws://192.168.1.2:9090' // url to your rosbridge server
         });
 
         ros.on('connection', function() {
@@ -40,7 +43,7 @@
 
         var battery = new ROSLIB.Topic({
             ros: ros,
-            name: '* /battery_monitor_node', // use a sensible namespace
+            name: '/battery_status', // use a sensible namespace
             messageType: 'battery_monitor/BatteryStatus' //Create a pose object (geometry_msg(s)/Pose)
 
         });
@@ -56,12 +59,11 @@
         }
         battery.subscribe(function(msg) {
             console.log(msg);
-            var batAmps = ' amps: ' + msg.amps;
-            var batHrs =  ' hrs: ' + msg.amp_hours;
-
-            $('#topic_data').text(batAmps + batHrs);
+            $('#topic_data').text(msg.amps + msg.amp_hours);
             $('#lin1').text(msg.amps);
             $('#lin2').text(msg.amp_hours);
+
+
 
         });
 
