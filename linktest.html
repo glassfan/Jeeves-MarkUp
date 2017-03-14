@@ -390,11 +390,90 @@
     <!-- include the roslibjs library ... required -->
 
     <script type="text/javascript">
+    //--------------DOC READY------------------------------------------------------------------------------------------
+
+    $(document).ready(function() {
+
+        //conditional to hide setPose hover elements after used once
+        $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
+            if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
+                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
+            } else {
+                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+            }
+        });
+
+        //resets visibility of setPose hover elements
+        $('#reset-pose').click(function() {
+            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+        });
+
+        //Map Marker Hover functions publish ROS srv message
+        $("#hov-get-stairs").click(function() {
+            callService('stairs');
+        });
+        $("#hov-set-stairs").click(function() {
+            setPose('stairs');
+        });
+
+        $("#hov-get-home").click(function() {
+            callService('home');
+        });
+        $("#hov-set-home").click(function() {
+            setPose('home');
+        });
+
+        $("#hov-get-circuits").click(function() {
+            callService('ee');
+        });
+        $("#hov-set-circuits").click(function() {
+            setPose('ee');
+        });
+
+        $("#hov-get-robotlab").click(function() {
+            callService('robot_lab');
+        });
+        $("#hov-set-robotlab").click(function() {
+            setPose('robot_lab');
+        });
+
+        $("#hov-get-near").click(function() {
+            callService('NEAR_lab');
+        });
+        $("#hov-set-near").click(function() {
+            setPose('NEAR_lab');
+        });
+
+        $("#hov-get-biomed").click(function() {
+            callService('Biomedical_lab');
+        });
+        $("#hov-set-biomed").click(function() {
+            setPose('Biomedical_lab');
+        });
+
+        // camera button click enables camera-screen element visibility
+        $('#camera-view').click(function() {
+            $("#camera-screen").show();
+        });
+
+        //  lidar button click enables lidar-screen visibility and disables camera-screen visibility
+        $('#lidar-view').click(function() {
+            $("#camera-screen").hide();
+        });
+        //Default on html page load: hide camera-screen, lidar-screen
+        $("#camera-screen").hide();
+
+    });
+
+
         var ros = new ROSLIB.Ros({
             // url: 'ws://localhost:9090' // url to your rosbridge server
             url: 'ws://192.168.1.2:9090' // url to your rosbridge server
         });
-        /*--------------navigation Set Pose--------------------------------------------------------------------------------------*/
+
+
+        //--------------navigation Set Pose-----------------------------------------------------------------------------------------
+
         function callService(location) {
             console.log('Service called')
 
@@ -417,6 +496,7 @@
                     result.result);
             });
         }
+
 
         function setPose(location) {
             console.log('Pose Set')
@@ -441,6 +521,8 @@
             });
         }
 
+
+
         function publishEncoded(topic, obj) {
             var msg = new ROSLIB.Message({
 
@@ -452,25 +534,32 @@
         function decodeMessage(msg) {
             return JSON.parse(msg.data);
         }
-        /*---------------Battery-----------------------------------------------------------------------------------*/
+
+        //---------------Battery-----------------------------------------------------------------------------------//
+
         var battery = new ROSLIB.Topic({
             ros: ros,
             name: '/battery_status', // use a sensible namespace
             messageType: 'battery_monitor/BatteryStatus' //Create a pose object (geometry_msg(s)/Pose)
         });
+
+
         battery.subscribe(function(msg) {
             console.log(msg);
             $('#topic_data').text(msg.amps + msg.amp_hours);
             $('#b-amps').text(msg.amps);
             $('#b-amphrs').text(msg.amp_hours);
         });
-        /*------------Nav Msgs------------------------------------------------------------------------------------------*/
+
+        //------------Nav Msgs----------------------------------------------------------------------------------------------
+
         var nav_msgs = new ROSLIB.Topic({
             ros: ros,
             name: '/odom', // use a sensible namespace
             messageType: 'nav_msgs/Odometry' //
             // messageType: 'nav_msgs/Odometry/fused_base_odometry/geometry_msgs/PoseWithCovariance/geometry_msgs/Pose/geometry_msgs/Point/geometry_msgs/Quaternion orientation/geometry_msgs/TwistWithCovariance/geometry_msgs/Twist/geometry_msgs/Vector3/geometry_msgs/Vector3'
         });
+
 
         nav_msgs.subscribe(function(msg) {
             console.log(msg);
@@ -504,22 +593,26 @@
             $('#ang-y').text(msg.twist.twist.angular.y);
             $('#ang-z').text(msg.twist.twist.angular.z);
         });
-        /*------------Diagnostic Array------------------------------------------------------------------------------------------*/
+
+        //------------Diagnostic Array--------------------------------------------------------------------------------------------
+
         var diagnostics = new ROSLIB.Topic({
             ros: ros,
             name: '/diagnostics',
-            // name: '*/sick_lms_200 (http://192.168.1.2:48290/',
-            // name: '*/camera/camera_nodelet_manager (http://192.168.1.2:59716/'
-            // name: '* /joystick (http://192.168.1.2:57493/',
+            // name: 'sick_lms_200 (http://192.168.1.2:48290/',
+            // name: 'camera/camera_nodelet_manager (http://192.168.1.2:59716/'
+            // name: 'joystick (http://192.168.1.2:57493/',
             messageType: 'diagnostic_msgs/DiagnosticArray'
 
         });
+
 
         var joy = new ROSLIB.Topic({
             ros: ros,
             name: '/joy',
             messageType: 'sensor_msgs/Joy'
-        })
+        });
+
 
         diagnostics.subscribe(function(msg) {
             // console.log(msg);
@@ -533,8 +626,10 @@
             var newHTML = $.map(values, function(val) {
                 return ('<span>' + val.key + ': ' + val.value + '</span><br/>');
             });
+
             $('#topic_data').text("/diagnostics");
             $('#diagnostic_data').text(name);
+
             if (levelbyte == '0') {
                 status = "OK";
             } else if (levelbyte == '1') {
@@ -551,6 +646,7 @@
             $('#hardware_id').text(hardware_id);
             $('#values').html(newHTML.join(""));
         });
+
 
         joy.subscribe(function(msg) {
             // console.log(msg);
@@ -585,84 +681,12 @@
                 axes_html.push("<p>No axes activity</p>");
             }
             $('#joy_axes').html(axes_html.join(""));
-            $('#joy_buttons').text(buttons); +
+            $('#joy_buttons').text(buttons); 
         });
-        /*-------------------------------------------------------------------------------------------------------------*/
-        /*--------------DOC READY----------------------------------------------------------------------------------------*/
-        $(document).ready(function() {
 
-            //conditional to hide setPose hover elements after used once
-            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
-                if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
-                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
-                } else {
-                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
-                }
-            });
+</script>
 
-            //resets visibility of setPose hover elements
-            $('#reset-pose').click(function() {
-                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
-            });
-
-            //Map Marker Hover functions publish ROS srv message
-            $("#hov-get-stairs").click(function() {
-                callService('stairs');
-            });
-            $("#hov-set-stairs").click(function() {
-                setPose('stairs');
-            });
-
-            $("#hov-get-home").click(function() {
-                callService('home');
-            });
-            $("#hov-set-home").click(function() {
-                setPose('home');
-            });
-
-            $("#hov-get-circuits").click(function() {
-                callService('ee');
-            });
-            $("#hov-set-circuits").click(function() {
-                setPose('ee');
-            });
-
-            $("#hov-get-robotlab").click(function() {
-                callService('robot_lab');
-            });
-            $("#hov-set-robotlab").click(function() {
-                setPose('robot_lab');
-            });
-
-            $("#hov-get-near").click(function() {
-                callService('NEAR_lab');
-            });
-            $("#hov-set-near").click(function() {
-                setPose('NEAR_lab');
-            });
-
-            $("#hov-get-biomed").click(function() {
-                callService('Biomedical_lab');
-            });
-            $("#hov-set-biomed").click(function() {
-                setPose('Biomedical_lab');
-            });
-
-            // camera button click enables camera-screen element visibility
-            $('#camera-view').click(function() {
-                $("#camera-screen").show();
-            });
-
-            // lidar button click enables lidar-screen visibility and disables camera-screen visibility
-            $('#lidar-view').click(function() {
-                $("#camera-screen").hide();
-            });
-            //Default on html page load: hide camera-screen, lidar-screen
-            $("#camera-screen").hide();
-
-        });
-    </script>
-    /*---------------Touch Functionality-----------------------------------------------------------------------------------*/
+    //---------------Touch Functionality-------------------------------------------------------------------------------------
 
     <script>
         $(function() {
@@ -699,7 +723,7 @@
             document.addEventListener('mouseover', removetouchclass, false) //this event gets called when input type is everything from touch to mouse/ trackpad
         })();
     </script>
-    /*--------------------------------------------------------------------------------------------------*/
+    <!-- ***********************************************************************************************************************************8 -->
 
 </body>
 
