@@ -58,8 +58,8 @@
                             <div class="maparea">
                                 <!-- style="background-image:url('images/fab-ll-drkgrn.png');"> -->
                                 <img class="img-responsive" src="/static/assets/images/fab-ll-drkgrn.png">
-                                <a class="btn btn-default black btn-sm" href="#" data-toggle="popover" title="Reset pose" data-placement="right" data-trigger="hover"><i class="fa fa-refresh" id="reset-pose" aria-hidden="true" data-toggle="popover"> pose</i></a>
-                                <a class="btn btn-default black btn-sm" href="#" data-toggle="popover" title="Stop Narration" data-placement="right" data-trigger="hover"><i class="fa fa-ban" id="stop-talk" aria-hidden="true" data-toggle="popover"> voice</i></a>
+                                <a class="btn btn-default black btn-sm" href="#" data-placement="right" data-trigger="hover"><i class="fa fa-refresh" id="reset-pose" aria-hidden="true" data-toggle="button"> pose</i></a>
+                                <a class="btn btn-default black btn-sm" href="#" data-placement="right" data-trigger="hover"><i class="fa fa-ban" id="stop-talk" aria-hidden="true" data-toggle="button"> voice</i></a>
                                 <div class="dropdown maplocation location1-stairs">
                                     <!-- <img class="img-responsive" src="images/Google_Maps.png" width="32" height="32" id="mapIcon1" class="dropdown-trigger" /> -->
                                     <span class="fa fa-hand-pointer-o "></span>
@@ -174,29 +174,24 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- <div class="col-sm-6 col-sm-offset-3"> -->
-                            <!-- <img class="img-responsive" src="http://placehold.it/600x450"> -->
                             <div class="ros-out-content">
-                                <div>Topic data: <span id="topic_data"></span></div>
+                                <div>Battery data:
+                                    <span id="battery_data"></span>
+                                </div>
+                                <br />
+                                <div>Nav msgs data:
+                                    <span id="nav_data"></span>
+                                </div>
+                                <br />
+                                <div>Diagnostic data:
+                                    <span id="topic_data"></span>
+                                </div>
+                                <br />
                             </div>
                         </div>
                         <!-- /.col -->
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12 col-xs-12 pad25">
-                            <div class="col-xs-2">
-                                <span class="fa fa-battery-full"></span>
-                            </div>
-                            <div class="col-xs-10">
-                                <dl>
-                                    <p>Battery</p>
-                                    <dt>Amps:</dt>
-                                    <dd><span id="b-amps"></span></dd>
-                                    <dt>Amp Hours:</dt>
-                                    <dd><span id="b-amphrs"></span></dd>
-                                </dl>
-                            </div>
-                        </div>
+                    <div class="row" style="box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);">
                         <div class="col-md-4 col-sm-12 col-xs-12 pad25">
                             <div class="col-xs-2">
                                 <span class="fa fa-code"></span>
@@ -204,67 +199,119 @@
                             <div class="col-xs-10">
                                 <dl>
                                     <p>Navigation </p>
-                                    <p>Position</p>
+                                    <dt><dfn>Position</dfn></dt>
                                     <dt>x:</dt>
-                                    <dd><span id="pos-x"></span></dd>
+                                    <dd>
+                                        <span id="pos-x"></span>
+                                    </dd>
                                     <dt>y:</dt>
-                                    <dd><span id="pos-y"></span></dd>
+                                    <dd>
+                                        <span id="pos-y"></span>
+                                    </dd>
                                     <dt>z:</dt>
-                                    <dd><span id="pos-z"></span></dd>
-                                    <p>Orientation</p>
+                                    <dd>
+                                        <span id="pos-z"></span>
+                                    </dd>
+                                    <dt><dfn>Orientation</dfn></dt>
                                     <dt>x:</dt>
-                                    <dd><span id="or-x"></span></dd>
+                                    <dd>
+                                        <span id="or-x"></span>
+                                    </dd>
                                     <dt>y:</dt>
-                                    <dd><span id="or-y"></span></dd>
+                                    <dd>
+                                        <span id="or-y"></span>
+                                    </dd>
                                     <dt>z:</dt>
-                                    <dd><span id="or-z"></span></dd>
-                                    <p>Vector3 linear</p>
+                                    <dd>
+                                        <span id="or-z"></span>
+                                    </dd>
+                                    <dt><dfn>Twist linear</dfn></dt>
                                     <dt>x:</dt>
-                                    <dd><span id="lin-x"></span></dd>
+                                    <dd>
+                                        <span id="lin-x"></span>
+                                    </dd>
                                     <dt>y:</dt>
-                                    <dd><span id="lin-y"></span></dd>
+                                    <dd>
+                                        <span id="lin-y"></span>
+                                    </dd>
                                     <dt>z:</dt>
-                                    <dd><span id="lin-z"></span></dd>
-                                    <p>Vector3 angular</p>
+                                    <dd>
+                                        <span id="lin-z"></span>
+                                    </dd>
+                                    <dt><dfn>Twist angular</dfn></dt>
                                     <dt>x:</dt>
-                                    <dd><span id="ang-x"></span></dd>
+                                    <dd>
+                                        <span id="ang-x"></span>
+                                    </dd>
                                     <dt>y:</dt>
-                                    <dd><span id="ang-y"></span></dd>
+                                    <dd>
+                                        <span id="ang-y"></span>
+                                    </dd>
                                     <dt>z:</dt>
-                                    <dd><span id="ang-z"></span></dd>
+                                    <dd>
+                                        <span id="ang-z"></span>
+                                    </dd>
                                 </dl>
                             </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12 pad25">
-                                <div class="col-xs-2">
-                                    <span class="fa fa-battery-full"></span>
-                                </div>
-                                <div class="col-xs-10">
-                                    <p>Name: <span id="diagnostic_data"></span></p>
-                                    <dl>
-                                        <dt>status:</dt>
-                                        <dd><span id="status"></span></dd>
-                                        <dt>message:</dt>
-                                        <dd><span id="message"></span></dd>
-                                        <dt>hardware_id:</dt>
-                                        <dd><span id="hardware_id"></span></dd>
-                                        <dt>value array:</dt>
-                                        <dd><span id="values"></span></dd>
-                                    </dl>
-                                    <p>Joystick</p>
-                                    <dl>
-                                        <dt>Axes:</dt>
-                                        <dd><span id="joy_axes"></span></dd>
-                                        <dt>Buttons:</dt>
-                                        <dd><span id="joy_buttons"></span></dd>
-                                    </dl>
-
-                                </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                            <div class="col-xs-2">
+                                <span class="fa fa-battery-full"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <p>Name: <span id="diagnostic_data"></span></p>
+                                <dl>
+                                    <dt>status:</dt>
+                                    <dd>
+                                        <span id="status"></span>
+                                    </dd>
+                                    <dt>message:</dt>
+                                    <dd>
+                                        <span id="message"></span>
+                                    </dd>
+                                    <dt>hardware_id:</dt>
+                                    <dd>
+                                        <span id="hardware_id"></span>
+                                    </dd>
+                                    <dt>value array:</dt>
+                                    <dd>
+                                        <span id="values"></span>
+                                    </dd>
+                                </dl>
+                                <p>Joystick</p>
+                                <dl>
+                                    <dt>Axes:</dt>
+                                    <dd>
+                                        <span id="joy_axes"></span>
+                                    </dd>
+                                    <dt>Buttons:</dt>
+                                    <dd>
+                                        <span id="joy_buttons"></span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                            <div class="col-xs-2">
+                                <span class="fa fa-battery-full"></span>
+                            </div>
+                            <div class="col-xs-10">
+                                <dl>
+                                    <dt><dfn>Battery</dfn></dt>
+                                    <dt>Amps:</dt>
+                                    <dd>
+                                        <span id="b-amps"></span>
+                                    </dd>
+                                    <dt>Amp Hours:</dt>
+                                    <dd>
+                                        <span id="b-amphrs"></span>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
-                    <!-- /.row -->
                 </div>
-
+                <!-- /.row -->
                 <!-- /#tab3 -->
                 <div class="tab-pane fade" id="tab4">
                     <section id="content-1-9" class="content-1-9 content-block">
@@ -388,107 +435,85 @@
     <script type="text/javascript" src="/static/js/eventemitter2.min.js"></script>
     <script type="text/javascript" src="/static/js/roslib.min.js"></script>
     <!-- include the roslibjs library ... required -->
-
     <script type="text/javascript">
-    //--------------DOC READY------------------------------------------------------------------------------------------
-
-    $(document).ready(function() {
-
-        //conditional to hide setPose hover elements after used once
-        $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
-            if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
-                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
-            } else {
+        //--------------DOC READY------------------------------------------------------------------------------------------
+        $(document).ready(function() {
+            //conditional to hide setPose hover elements after used once
+            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
+                if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
+                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
+                } else {
+                    $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+                }
+            });
+            //resets visibility of setPose hover elements
+            $('#reset-pose').click(function() {
                 $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
-            }
-        });
-
-        //resets visibility of setPose hover elements
-        $('#reset-pose').click(function() {
-            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
-        });
-
-        //Map Marker Hover functions publish ROS srv message
-        $("#hov-get-stairs").click(function() {
-            callService('stairs');
-        });
-        $("#hov-set-stairs").click(function() {
-            setPose('stairs');
-        });
-
-        $("#hov-get-home").click(function() {
-            callService('home');
-        });
-        $("#hov-set-home").click(function() {
-            setPose('home');
-        });
-
-        $("#hov-get-circuits").click(function() {
-            callService('ee');
-        });
-        $("#hov-set-circuits").click(function() {
-            setPose('ee');
-        });
-
-        $("#hov-get-robotlab").click(function() {
-            callService('robot_lab');
-        });
-        $("#hov-set-robotlab").click(function() {
-            setPose('robot_lab');
-        });
-
-        $("#hov-get-near").click(function() {
-            callService('NEAR_lab');
-        });
-        $("#hov-set-near").click(function() {
-            setPose('NEAR_lab');
-        });
-
-        $("#hov-get-biomed").click(function() {
-            callService('Biomedical_lab');
-        });
-        $("#hov-set-biomed").click(function() {
-            setPose('Biomedical_lab');
-        });
-
-        // camera button click enables camera-screen element visibility
-        $('#camera-view').click(function() {
-            $("#camera-screen").show();
-        });
-
-        //  lidar button click enables lidar-screen visibility and disables camera-screen visibility
-        $('#lidar-view').click(function() {
+            });
+            //Map Marker Hover functions publish ROS srv message
+            $("#hov-get-stairs").click(function() {
+                callService('stairs');
+            });
+            $("#hov-set-stairs").click(function() {
+                setPose('stairs');
+            });
+            $("#hov-get-home").click(function() {
+                callService('home');
+            });
+            $("#hov-set-home").click(function() {
+                setPose('home');
+            });
+            $("#hov-get-circuits").click(function() {
+                callService('ee');
+            });
+            $("#hov-set-circuits").click(function() {
+                setPose('ee');
+            });
+            $("#hov-get-robotlab").click(function() {
+                callService('robot_lab');
+            });
+            $("#hov-set-robotlab").click(function() {
+                setPose('robot_lab');
+            });
+            $("#hov-get-near").click(function() {
+                callService('NEAR_lab');
+            });
+            $("#hov-set-near").click(function() {
+                setPose('NEAR_lab');
+            });
+            $("#hov-get-biomed").click(function() {
+                callService('Biomedical_lab');
+            });
+            $("#hov-set-biomed").click(function() {
+                setPose('Biomedical_lab');
+            });
+            // camera button click enables camera-screen element visibility
+            $('#camera-view').click(function() {
+                $("#camera-screen").show();
+            });
+            //  lidar button click enables lidar-screen visibility and disables camera-screen visibility
+            $('#lidar-view').click(function() {
+                $("#camera-screen").hide();
+            });
+            //Default on html page load: hide camera-screen, lidar-screen
             $("#camera-screen").hide();
         });
-        //Default on html page load: hide camera-screen, lidar-screen
-        $("#camera-screen").hide();
-
-    });
-
-
         var ros = new ROSLIB.Ros({
             // url: 'ws://localhost:9090' // url to your rosbridge server
             url: 'ws://192.168.1.2:9090' // url to your rosbridge server
         });
-
-
         //--------------navigation Set Pose-----------------------------------------------------------------------------------------
-
         function callService(location) {
             console.log('Service called')
-
             var waypoint = new ROSLIB.Service({
                 ros: ros,
                 name: 'way_point',
                 serviceType: 'basics/Waypoint'
             });
-
             var request = new ROSLIB.ServiceRequest({
                 name: location
             });
-
             console.log(request)
-
             waypoint.callService(request, function(result) {
                 console.log('Result for service call on ' +
                     waypoint.name +
@@ -497,22 +522,17 @@
             });
         }
 
-
         function setPose(location) {
             console.log('Pose Set')
-
             var waypoint = new ROSLIB.Service({
                 ros: ros,
                 name: 'set_pose',
                 serviceType: 'basics/Waypoint'
             });
-
             var request = new ROSLIB.ServiceRequest({
                 name: location
             });
-
             console.log(request)
-
             waypoint.callService(request, function(result) {
                 console.log('Result for service call on ' +
                     waypoint.name +
@@ -521,11 +541,8 @@
             });
         }
 
-
-
         function publishEncoded(topic, obj) {
             var msg = new ROSLIB.Message({
-
                 data: JSON.stringify(obj)
             });
             topic.publish(msg);
@@ -534,33 +551,25 @@
         function decodeMessage(msg) {
             return JSON.parse(msg.data);
         }
-
         //---------------Battery-----------------------------------------------------------------------------------//
-
         var battery = new ROSLIB.Topic({
             ros: ros,
             name: '/battery_status', // use a sensible namespace
             messageType: 'battery_monitor/BatteryStatus' //Create a pose object (geometry_msg(s)/Pose)
         });
-
-
         battery.subscribe(function(msg) {
             console.log(msg);
-            $('#topic_data').text(msg.amps + msg.amp_hours);
+            $('#battery_data').text(msg.amps + msg.amp_hours);
             $('#b-amps').text(msg.amps);
             $('#b-amphrs').text(msg.amp_hours);
         });
-
         //------------Nav Msgs----------------------------------------------------------------------------------------------
-
         var nav_msgs = new ROSLIB.Topic({
             ros: ros,
             name: '/odom', // use a sensible namespace
             messageType: 'nav_msgs/Odometry' //
             // messageType: 'nav_msgs/Odometry/fused_base_odometry/geometry_msgs/PoseWithCovariance/geometry_msgs/Pose/geometry_msgs/Point/geometry_msgs/Quaternion orientation/geometry_msgs/TwistWithCovariance/geometry_msgs/Twist/geometry_msgs/Vector3/geometry_msgs/Vector3'
         });
-
-
         nav_msgs.subscribe(function(msg) {
             console.log(msg);
             var position =
@@ -579,7 +588,7 @@
                 ' x: ' + msg.twist.twist.angular.x +
                 ' y: ' + msg.twist.twist.angular.y +
                 ' z: ' + msg.twist.twist.angular.z;
-            $('#topic_data').text(position + orientation + linear + angular);
+            $('#nav_data').text(position + orientation + linear + angular);
             $('#pos-x').text(msg.pose.pose.position.x);
             $('#pos-y').text(msg.pose.pose.position.y);
             $('#pos-z').text(msg.pose.pose.position.z);
@@ -593,9 +602,7 @@
             $('#ang-y').text(msg.twist.twist.angular.y);
             $('#ang-z').text(msg.twist.twist.angular.z);
         });
-
         //------------Diagnostic Array--------------------------------------------------------------------------------------------
-
         var diagnostics = new ROSLIB.Topic({
             ros: ros,
             name: '/diagnostics',
@@ -603,17 +610,12 @@
             // name: 'camera/camera_nodelet_manager (http://192.168.1.2:59716/'
             // name: 'joystick (http://192.168.1.2:57493/',
             messageType: 'diagnostic_msgs/DiagnosticArray'
-
         });
-
-
         var joy = new ROSLIB.Topic({
             ros: ros,
             name: '/joy',
             messageType: 'sensor_msgs/Joy'
         });
-
-
         diagnostics.subscribe(function(msg) {
             // console.log(msg);
             var name = msg.status[0].name;
@@ -626,10 +628,8 @@
             var newHTML = $.map(values, function(val) {
                 return ('<span>' + val.key + ': ' + val.value + '</span><br/>');
             });
-
             $('#topic_data').text("/diagnostics");
             $('#diagnostic_data').text(name);
-
             if (levelbyte == '0') {
                 status = "OK";
             } else if (levelbyte == '1') {
@@ -646,8 +646,6 @@
             $('#hardware_id').text(hardware_id);
             $('#values').html(newHTML.join(""));
         });
-
-
         joy.subscribe(function(msg) {
             // console.log(msg);
             var axes = msg.axes;
@@ -681,24 +679,16 @@
                 axes_html.push("<p>No axes activity</p>");
             }
             $('#joy_axes').html(axes_html.join(""));
-            $('#joy_buttons').text(buttons); 
+            $('#joy_buttons').text(buttons);
         });
-
-</script>
-
-    //---------------Touch Functionality-------------------------------------------------------------------------------------
-
+    </script>
+    <!-- **********************Touch Functionality*************************************************************************** -->
     <script>
-        $(function() {
-            $('[data-toggle="popover"]').popover()
-        });
-
         // touchscreen function
         (function() {
             var isTouch = false //var to indicate current input type (is touch versus no touch)
             var isTouchTimer
             var curRootClass = '' //var indicating current document root class ("can-touch" or "")
-
             function addtouchclass(e) {
                 clearTimeout(isTouchTimer)
                 isTouch = true
@@ -718,13 +708,11 @@
                     document.documentElement.classList.remove('can-touch')
                 }
             }
-
             document.addEventListener('touchstart', addtouchclass, false) //this event only gets called when input type is touch
             document.addEventListener('mouseover', removetouchclass, false) //this event gets called when input type is everything from touch to mouse/ trackpad
         })();
     </script>
     <!-- ***********************************************************************************************************************************8 -->
-
 </body>
 
 </html>
