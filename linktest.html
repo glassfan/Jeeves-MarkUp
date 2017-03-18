@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <title>Jeeves Home page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="pinegrow, blocks, bootstrap" />
+        <meta name="description" content="My new website" />
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <!-- Core CSS -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+        <!-- Style Library -->
+        <link href="/static/css/style-library-1.css" rel="stylesheet">
+        <link href="/static/css/plugins.css" rel="stylesheet">
+        <link href="/static/css/blocks.css" rel="stylesheet">
+        <link href="/static/css/links.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body data-spy="scroll" data-target="nav">
+        <section class="content-block content-1-8">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#">
+                        <img src="/static/assets/images/brand/jeeves-logo.png" class="brand-img img-responsive">
+                    </a>
+                </div>
+                <ul class="nav nav-tabs text-center" role="tablist" id="myTab">
+                    <li class="active">
+                        <a href="#tab1" role="tab" data-toggle="tab">Navigation</a>
+                    </li>
+                    <li>
+                        <a href="#tab2" role="tab" data-toggle="tab">ViewPort</a>
+                    </li>
+                    <li>
+                        <a href="#tab3" role="tab" data-toggle="tab">Diagnostics</a>
+                    </li>
+                    <li>
+                        <a href="#tab4" role="tab" data-toggle="tab">Features</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-1 col-sm-6">
+                                <!-- <img class="img-responsive" src="images/fab-ll-drkgrn.png"> -->
+                                <div class="maparea">
+                                    <!-- style="background-image:url('images/fab-ll-drkgrn.png');"> -->
+                                    <img class="img-responsive" src="/static/assets/images/fab-ll-drkgrn.png">
+                                    <a class="btn btn-default black btn-sm" href="#" data-placement="right" data-trigger="hover"><i class="fa fa-refresh" id="reset-pose" aria-hidden="true" data-toggle="button"> pose</i></a>
+                                    <a class="btn btn-default black btn-sm" href="#" data-placement="right" data-trigger="hover"><i class="fa fa-ban" id="stop-talk" aria-hidden="true" data-toggle="button"> voice</i></a>
+                                    <a class="btn btn-default black btn-sm" href="#" data-placement="right" data-trigger="hover"><i class="fa fa-play" id="demo-gesture" aria-hidden="true" data-toggle="button"> demo</i></a>
+                                    <div class="dropdown maplocation location1-stairs">
+                                        <!-- <img class="img-responsive" src="images/Google_Maps.png" width="32" height="32" id="mapIcon1" class="dropdown-trigger" /> -->
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Stairs</li>
+                                            <a id="hov-get-stairs" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-stairs" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location2-home">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Home</li>
+                                            <a id="hov-get-home" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-home" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location3-robot-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Robot Lab</li>
+                                            <a id="hov-get-robotlab" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-robotlab" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location4-near-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Near Lab</li>
+                                            <a id="hov-get-near" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-near" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location5-circuit-lounge">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Circuit Lounge</li>
+                                            <a id="hov-get-circuits" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-circuits" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown maplocation location6-Biomed-lab">
+                                        <span class="fa fa-hand-pointer-o "></span>
+                                        <div class="dropdown-content">
+                                            <li class="dropdown-header">Biomedical Lab</li>
+                                            <a id="hov-get-biomed" href="#"><span>Go To</span></a>
+                                            <a id="hov-set-biomed" href="#"><span>Set Pose</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./maparea  -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-5 col-sm-6">
+                                <!-- <div class="col-xs-2"> -->
+                                <!-- </div> -->
+                                <div class="map-text">
+                                    <h2>Guided Tour</h2>
+                                    <span class="fa fa-hand-pointer-o"> hover over/touch icon</span>
+                                    <ol>
+                                        <li>Drive Jeeve's manually to one of the known locations.</li>
+                                        <li>Set pose to Jeeve's physical location</li>
+                                        <li>Go to Location</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#tab1 -->
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 text-center">
+                                <div class="underlined-title">
+                                    <h1>ViewPort</h1>
+                                    <hr>
+                                </div>
+                                <!-- <h3>Lidar View</h3> -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div id="camera-screen">
+                                <div class="col-md-8">
+                                    <!-- <img class="center-block" src="http://192.168.1.2:8081/stream?topic=/camera/face" width="640"> -->
+                                    <!-- By default, the video streamer is at port 8080 -->
+                                    <img class="center-block" src="http://192.168.1.2:8081/stream?topic=/camera/rgb/image_rect_color" width="640" />
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <div class="viewport-btns text-center">
+                            <a class="btn btn-default black btn-sm" href="#" data-trigger="hover"><i class="fa fa-video-camera" id="camera-view" aria-hidden="true"> Depth </i></a>
+                            <a class="btn btn-default black btn-sm" href="#" data-trigger="hover"><i class="fa fa-bolt" id="lidar-view" aria-hidden="true"> RGB</i></a>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#tab2 -->
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 text-center">
+                                <div class="underlined-title">
+                                    <h1>Diagnostics</h1>
+                                    <hr>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <div class="col-sm-6 col-sm-offset-3"> -->
+                                <div class="ros-out-content">
+                                    <div>Battery data:
+                                        <span id="battery_data"></span>
+                                    </div>
+                                    <br />
+                                    <div>Nav msgs data:
+                                        <span id="nav_data"></span>
+                                    </div>
+                                    <br />
+                                    <div>Diagnostic data:
+                                        <span id="topic_data"></span>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                <div class="col-xs-2">
+                                    <span class="fa fa-bar-chart-o"></span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <dl>
+                                        <p>Navigation </p>
+                                        <dt><dfn>Position</dfn></dt>
+                                        <dt>x:</dt>
+                                        <dd>
+                                            <span id="pos-x"></span>
+                                        </dd>
+                                        <dt>y:</dt>
+                                        <dd>
+                                            <span id="pos-y"></span>
+                                        </dd>
+                                        <dt>z:</dt>
+                                        <dd>
+                                            <span id="pos-z"></span>
+                                        </dd>
+                                        <dt><dfn>Orientation</dfn></dt>
+                                        <dt>x:</dt>
+                                        <dd>
+                                            <span id="or-x"></span>
+                                        </dd>
+                                        <dt>y:</dt>
+                                        <dd>
+                                            <span id="or-y"></span>
+                                        </dd>
+                                        <dt>z:</dt>
+                                        <dd>
+                                            <span id="or-z"></span>
+                                        </dd>
+                                        <dt><dfn>Twist linear</dfn></dt>
+                                        <dt>x:</dt>
+                                        <dd>
+                                            <span id="lin-x"></span>
+                                        </dd>
+                                        <dt>y:</dt>
+                                        <dd>
+                                            <span id="lin-y"></span>
+                                        </dd>
+                                        <dt>z:</dt>
+                                        <dd>
+                                            <span id="lin-z"></span>
+                                        </dd>
+                                        <dt><dfn>Twist angular</dfn></dt>
+                                        <dt>x:</dt>
+                                        <dd>
+                                            <span id="ang-x"></span>
+                                        </dd>
+                                        <dt>y:</dt>
+                                        <dd>
+                                            <span id="ang-y"></span>
+                                        </dd>
+                                        <dt>z:</dt>
+                                        <dd>
+                                            <span id="ang-z"></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                <div class="col-xs-2">
+                                    <span class="fa fa-sitemap"></span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <p>Name: <span id="diagnostic_data"></span></p>
+                                    <dl>
+                                        <dt>status:</dt>
+                                        <dd>
+                                            <span id="status"></span>
+                                        </dd>
+                                        <dt>message:</dt>
+                                        <dd>
+                                            <span id="message"></span>
+                                        </dd>
+                                        <dt>hardware_id:</dt>
+                                        <dd>
+                                            <span id="hardware_id"></span>
+                                        </dd>
+                                        <dt>value array:</dt>
+                                        <dd>
+                                            <span id="values"></span>
+                                        </dd>
+                                    </dl>
+                                    <p>Joystick</p>
+                                    <dl>
+                                        <dt>Axes:</dt>
+                                        <dd>
+                                            <span id="joy_axes"></span>
+                                        </dd>
+                                        <dt>Buttons:</dt>
+                                        <dd>
+                                            <span id="joy_buttons"></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                <div class="col-xs-2">
+                                    <span class="fa fa-battery-full"></span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <dl>
+                                        <dt><dfn>Battery</dfn></dt>
+                                        <dt>Amps:</dt>
+                                        <dd>
+                                            <span id="b-amps"></span>
+                                        </dd>
+                                        <dt>Amp Hours:</dt>
+                                        <dd>
+                                            <span id="b-amphrs"></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <!-- /#tab3 -->
+                    <div class="tab-pane fade" id="tab4">
+                        <section id="content-1-9" class="content-1-9 content-block">
+                            <div class="container">
+                                <div class="underlined-title">
+                                    <h1>Features</h1>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-car"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Navigation</h4>
+                                            <p>Jeeves is equipped with Mecanuum wheels and is programmed to drive to select locations of PSU's 4th Ave building lower level.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-code"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Kinect</h4>
+                                            <p>Jeeves has a Kinect RGB-D camera, connected via USB 2.0 to the main computer. The Kinect is useful for human-robot Interaction and obstacle detection.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-comments-o"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Speech</h4>
+                                            <p>Jeeves can answer a range of questions and give short descriptions of the rooms it visits during the guided tour. Ask Jeeves to tell you a joke!</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25 pull-right">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-lightbulb-o"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Sensors</h4>
+                                            <p>Retro chillwave YOLO four loko photo booth. Brooklyn kale chips, seitan hella 3 wolf moon slow-carb paleo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-android"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Ros</h4>
+                                            <p>Jeeves is built with ROS (Robot Operating Sysytem). ROS provides hardware abstractionm device drivers, libraries, visualizers, message passing, and package management for the robot.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                                        <div class="col-xs-2">
+                                            <span class="fa fa-laptop"></span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <h4>Platform</h4>
+                                            <p>Jeeves is run with Ubuntu 14.04, ROS-indigo, and Python 2.7+. It's main stack is located on the laptop that resides above its wheel base.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.container -->
+                        </section>
+                    </div>
+                    <!-- /#tab4 -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <section class="content-block-nopad footer-wrap-1-3 bg-white">
+            <div class="container footer-1-3 bg-white">
+                <div id="colorstrip">
+                    <div class="col-md-4 pull-left">
+                        <img src="/static/assets/images/brand/PSU.png" class="brand-img img-responsive bg-offwhite margin-top5">
+                        <ul class="social social-light">
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-linux"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-windows"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-apple"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-2x fa-google"></i></a>
+                            </li>
+                        </ul>
+                        <!-- /.social -->
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <p class="address-bold-line black margin-top10">Maseeh College of Engineering</p>
+                        <p class="address small black">
+                    1930 SW 4th Ave<br> Portland, Or.<br> 97212</p>
+                    </div>
+                    <div class="col-xs-12 footer-text">
+                        <!-- <p>Please take a few minutes to read our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></p> -->
+                        <i class="fa fa-copyright" aria-hidden="true">2017</i>
+                    </div>
+                </div>
+                <!-- /.container -->
+        </section>
+        <section class="content-block-nopad bg-deepocean footer-wrap-1-2">
+            <!-- /.container -->
+        </section>
+        <script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins.js"></script>
+        <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="/static/js/bskit-scripts.js"></script>
+        <!-- include EventEmitter library ... currently not used in this sample -->
+        <script type="text/javascript" src="/static/js/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="/static/js/roslib.min.js"></script>
+        <!-- include the roslibjs library ... required -->
+        <script type="text/javascript">
+    //--------------DOC READY------------------------------------------------------------------------------------------
+    $(document).ready(function() {
+        //conditional to hide setPose hover elements after used once
+        $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').click(function() {
+            if ($('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display') === 'block') {
+                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'none');
+            } else {
+                $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+            }
+        });
+        //resets visibility of setPose hover elements
+        $('#reset-pose').click(function() {
+            $('#hov-set-stairs, #hov-set-home, #hov-set-circuits, #hov-set-near, #hov-set-robotlab, #hov-set-biomed').css('display', 'block');
+        });
+        //Map Marker Hover functions publish ROS srv message
+        $("#hov-get-stairs").click(function() {
+            callService('stairs');
+        });
+        $("#hov-set-stairs").click(function() {
+            setPose('stairs');
+        });
+        $("#hov-get-home").click(function() {
+            callService('home');
+        });
+        $("#hov-set-home").click(function() {
+            setPose('home');
+        });
+        $("#hov-get-circuits").click(function() {
+            callService('ee');
+        });
+        $("#hov-set-circuits").click(function() {
+            setPose('ee');
+        });
+        $("#hov-get-robotlab").click(function() {
+            callService('robot_lab');
+        });
+        $("#hov-set-robotlab").click(function() {
+            setPose('robot_lab');
+        });
+        $("#hov-get-near").click(function() {
+            callService('NEAR_lab');
+        });
+        $("#hov-set-near").click(function() {
+            setPose('NEAR_lab');
+        });
+        $("#hov-get-biomed").click(function() {
+            callService('Biomedical_lab');
+        });
+        $("#hov-set-biomed").click(function() {
+            setPose('Biomedical_lab');
+        });
+        // camera button click enables camera-screen element visibility
+        $('#camera-view').click(function() {
+            $("#camera-screen").show();
+        });
+        //  lidar button click enables lidar-screen visibility and disables camera-screen visibility
+        $('#lidar-view').click(function() {
+            $("#camera-screen").hide();
+        });
+        //Default on html page load: hide camera-screen, lidar-screen
+        $("#camera-screen").hide();
+    });
+        var ros = new ROSLIB.Ros({
+            // url: 'ws://localhost:9090' // url to your rosbridge server
+            url: 'ws://192.168.1.2:9090' // url to your rosbridge server
+        });
+        //--------------navigation Set Pose-----------------------------------------------------------------------------------------
+        function callService(location) {
+            console.log('Service called')
+            var waypoint = new ROSLIB.Service({
+                ros: ros,
+                name: 'way_point',
+                serviceType: 'basics/Waypoint'
+            });
+            var request = new ROSLIB.ServiceRequest({
+                name: location
+            });
+            console.log(request)
+            waypoint.callService(request, function(result) {
+                console.log('Result for service call on ' +
+                    waypoint.name +
+                    ': ' +
+                    result.result);
+            });
+        }
+        function setPose(location) {
+            console.log('Pose Set')
+            var waypoint = new ROSLIB.Service({
+                ros: ros,
+                name: 'set_pose',
+                serviceType: 'basics/Waypoint'
+            });
+            var request = new ROSLIB.ServiceRequest({
+                name: location
+            });
+            console.log(request)
+            waypoint.callService(request, function(result) {
+                console.log('Result for service call on ' +
+                    waypoint.name +
+                    ': ' +
+                    result.result);
+            });
+        }
+        function publishEncoded(topic, obj) {
+            var msg = new ROSLIB.Message({
+                data: JSON.stringify(obj)
+            });
+            topic.publish(msg);
+        }
+        function decodeMessage(msg) {
+            return JSON.parse(msg.data);
+        }
+        //---------------Battery-----------------------------------------------------------------------------------//
+        var battery = new ROSLIB.Topic({
+            ros: ros,
+            name: '/battery_status', // use a sensible namespace
+            messageType: 'battery_monitor/BatteryStatus' //Create a pose object (geometry_msg(s)/Pose)
+        });
+        battery.subscribe(function(msg) {
+            console.log(msg);
+            $('#battery_data').text(msg.amps + msg.amp_hours);
+            $('#b-amps').text(msg.amps);
+            $('#b-amphrs').text(msg.amp_hours);
+        });
+        //------------Nav Msgs----------------------------------------------------------------------------------------------
+        var nav_msgs = new ROSLIB.Topic({
+            ros: ros,
+            name: '/odom', // use a sensible namespace
+            messageType: 'nav_msgs/Odometry' //
+            // messageType: 'nav_msgs/Odometry/fused_base_odometry/geometry_msgs/PoseWithCovariance/geometry_msgs/Pose/geometry_msgs/Point/geometry_msgs/Quaternion orientation/geometry_msgs/TwistWithCovariance/geometry_msgs/Twist/geometry_msgs/Vector3/geometry_msgs/Vector3'
+        });
+        nav_msgs.subscribe(function(msg) {
+            console.log(msg);
+            var position =
+                ' x: ' + msg.pose.pose.position.x +
+                ' y: ' + msg.pose.pose.position.y +
+                ' z: ' + msg.pose.pose.position.z;
+            var orientation =
+                ' x: ' + msg.pose.pose.orientation.x +
+                ' y: ' + msg.pose.pose.orientation.y +
+                ' z: ' + msg.pose.pose.orientation.z;
+            var linear =
+                ' x: ' + msg.twist.twist.linear.x +
+                ' y: ' + msg.twist.twist.linear.y +
+                ' z: ' + msg.twist.twist.linear.z;
+            var angular =
+                ' x: ' + msg.twist.twist.angular.x +
+                ' y: ' + msg.twist.twist.angular.y +
+                ' z: ' + msg.twist.twist.angular.z;
+            $('#nav_data').text(position + orientation + linear + angular);
+            $('#pos-x').text(msg.pose.pose.position.x);
+            $('#pos-y').text(msg.pose.pose.position.y);
+            $('#pos-z').text(msg.pose.pose.position.z);
+            $('#or-x').text(msg.pose.pose.orientation.x);
+            $('#or-y').text(msg.pose.pose.orientation.y);
+            $('#or-z').text(msg.pose.pose.orientation.z);
+            $('#lin-x').text(msg.twist.twist.linear.x);
+            $('#lin-y').text(msg.twist.twist.linear.y);
+            $('#lin-z').text(msg.twist.twist.linear.z);
+            $('#ang-x').text(msg.twist.twist.angular.x);
+            $('#ang-y').text(msg.twist.twist.angular.y);
+            $('#ang-z').text(msg.twist.twist.angular.z);
+        });
+        //------------Diagnostic Array--------------------------------------------------------------------------------------------
+        var diagnostics = new ROSLIB.Topic({
+            ros: ros,
+            name: '/diagnostics',
+            // name: 'sick_lms_200 (http://192.168.1.2:48290/',
+            // name: 'camera/camera_nodelet_manager (http://192.168.1.2:59716/'
+            // name: 'joystick (http://192.168.1.2:57493/',
+            messageType: 'diagnostic_msgs/DiagnosticArray'
+        });
+        var joy = new ROSLIB.Topic({
+            ros: ros,
+            name: '/joy',
+            messageType: 'sensor_msgs/Joy'
+        });
+        diagnostics.subscribe(function(msg) {
+            // console.log(msg);
+            var name = msg.status[0].name;
+            var levelbyte = msg.status[0].level;
+            var message = msg.status[0].message;
+            var hardware_id = msg.status[0].hardware_id;
+            var values = msg.status[0].values;
+            var value_text = "";
+            var status = "OK";
+            var newHTML = $.map(values, function(val) {
+                return ('<span>' + val.key + ': ' + val.value + '</span><br/>');
+            });
+            $('#topic_data').text("/diagnostics");
+            $('#diagnostic_data').text(name);
+            if (levelbyte == '0') {
+                status = "OK";
+            } else if (levelbyte == '1') {
+                status = "WARN";
+            } else if (levelbyte == '2') {
+                status = "ERROR";
+            } else if (levelbyte == '3') {
+                status = "STALE";
+            } else {
+                status = "UNKNOWN";
+            }
+            $('#status').text(status);
+            $('#message').text(message);
+            $('#hardware_id').text(hardware_id);
+            $('#values').html(newHTML.join(""));
+        });
+        joy.subscribe(function(msg) {
+            // console.log(msg);
+            var axes = msg.axes;
+            var buttons = msg.buttons;
+            var axes_html = [];
+            if (axes[0] > 0) {
+                axes_html.push("<p>Left analog: left (" + axes[0] + ")</p>");
+            } else if (axes[0] < 0) {
+                axes_html.push("<p>Left analog: right (" + axes[0] + ")</p>");
+            } else if (axes[1] > 0) {
+                axes_html.push("<p>Left analog: up (" + axes[1] + ")</p>");
+            } else if (axes[1] < 0) {
+                axes_html.push("<p>Left analog: down (" + axes[1] + ")</p>");
+            } else if (axes[2] > 0) {
+                axes_html.push("<p>Right analog: left (" + axes[2] + ")</p>");
+            } else if (axes[2] < 0) {
+                axes_html.push("<p>Right analog: right (" + axes[2] + ")</p>");
+            } else if (axes[3] > 0) {
+                axes_html.push("<p>Right analog: up (" + axes[3] + ")</p>");
+            } else if (axes[3] < 0) {
+                axes_html.push("<p>Right analog: down (" + axes[3] + ")</p>");
+            } else if (axes[4] > 0) {
+                axes_html.push("<p>D-pad: left (" + axes[4] + ")</p>");
+            } else if (axes[4] < 0) {
+                axes_html.push("<p>D-pad: right (" + axes[4] + ")</p>");
+            } else if (axes[5] > 0) {
+                axes_html.push("<p>D-pad: up (" + axes[5] + ")</p>");
+            } else if (axes[5] < 0) {
+                axes_html.push("<p>D-pad: down (" + axes[5] + ")</p>");
+            } else {
+                axes_html.push("<p>No axes activity</p>");
+            }
+            $('#joy_axes').html(axes_html.join(""));
+            $('#joy_buttons').text(buttons);
+        });
+</script>
+        <!-- **********************Touch Functionality*************************************************************************** -->
+        <script>
+
+        // touchscreen function
+        (function() {
+            var isTouch = false //var to indicate current input type (is touch versus no touch)
+            var isTouchTimer
+            var curRootClass = '' //var indicating current document root class ("can-touch" or "")
+            function addtouchclass(e) {
+                clearTimeout(isTouchTimer)
+                isTouch = true
+                if (curRootClass != 'can-touch') { //add "can-touch' class if it's not already present
+                    curRootClass = 'can-touch'
+                    document.documentElement.classList.add(curRootClass)
+                }
+                isTouchTimer = setTimeout(function() {
+                    isTouch = false
+                }, 500) //maintain "istouch" state for 500ms so removetouchclass doesn't get fired immediately following a touch event
+            }
+            function removetouchclass(e) {
+                if (!isTouch && curRootClass == 'can-touch') { //remove 'can-touch' class if not triggered by a touch event and class is present
+                    isTouch = false
+                    curRootClass = ''
+                    document.documentElement.classList.remove('can-touch')
+                }
+            }
+            document.addEventListener('touchstart', addtouchclass, false) //this event only gets called when input type is touch
+            document.addEventListener('mouseover', removetouchclass, false) //this event gets called when input type is everything from touch to mouse/ trackpad
+        })();
+    </script>
+        <!-- ***********************************************************************************************************************************8 -->
+    </body>
+</html>
