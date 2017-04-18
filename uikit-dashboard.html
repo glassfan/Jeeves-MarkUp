@@ -143,20 +143,33 @@
             $('#topic_data').text("/diagnostics");
             $('#diagnostic_data').text(name);
             if (levelbyte == '0') {
-                status = "OK";
+                status = "<span class='uk-text-success'>OK</span>";
             } else if (levelbyte == '1') {
-                status = "WARN";
+                status = "<span class='uk-text-warning'>WARN</span>";
             } else if (levelbyte == '2') {
-                status = "ERROR";
+                status = "<span class='uk-text-danger'>ERROR</span>";
             } else if (levelbyte == '3') {
-                status = "STALE";
+                status = "<span class='uk-text-warning'>STALE</span>";
             } else {
-                status = "UNKNOWN";
+                status = "<span class='uk-text-warning'>UNKNOWN</span>";
             }
-            $('#status').text(status);
-            $('#message').text(message);
-            $('#hardware_id').text(hardware_id);
-            $('#values').html(newHTML.join(""));
+            // $('#status').text(status);
+            // $('#message').text(message);
+            // $('#hardware_id').text(hardware_id);
+            // $('#values').html(newHTML.join(""));
+            var name_arr = name.split(':');
+            var id = name_arr[0] + '-modal';
+            var header = '<div class="uk-modal-header"><h2 class="uk-modal-title">'+name+'</h2></div>';
+            var body = '<div class="uk-modal-body">'+newHTML.join("")+'</div>';
+            var footer = '<p class="uk-text-center"><button class="uk-button uk-button-primary uk-modal-close" type="button">Close</button></p>';
+            var modal = '<div class="uk-modal-dialog uk-modal-body"><button class="uk-modal-close-default" type="button" uk-close></button>'+header+body+footer+'</div>';
+            var x_modal = '<button class="uk-button uk-button-primary uk-margin-small-right" type="button" uk-toggle="target: #'+id+'">Info</button><div id="'+id+'" uk-modal>'+modal+'</div>';
+
+            var table_entry = '<tr class="uk-preserve-color"><td>'+name+'</td><td>'+status+'</td><td>'+message+'</td><td>'+hardware_id+'</td><td>'+x_modal+'</td></tr>';
+
+            console.log(table_entry);
+
+            $('#devices-table-body').html(table_entry);
         });
 
         // CALLBACKS AND OTHER FUNCTIONS
@@ -261,14 +274,19 @@
                 <div class="uk-grid-match uk-child-width-expand@m" id="devices" uk-grid>
                     <div>
                         <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                            <div class="uk-card-badge uk-label"><span uk-icon="icon: video-camera"></span></div>     
-                            <h3 class="uk-card-title"><span id="devices-name"></span></h3>
-                            <dl class="uk-description-list">
-                                <dt>status:</dt><dd><span id="devices-status"></span></dd>
-                                <dt>message:</dt><dd><span id="devices-message"></span></dd>
-                                <dt>hardware_id:</dt><dd><span id="devices-hardware_id"></span></dd>
-                                <dt>value array:</dt><dd><span id="devices-values"></span></dd>
-                            </dl>
+                            <table class="uk-table uk-table-small uk-table-middle uk-table-striped" id="devices-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th>Message</th>
+                                        <th>Hardware ID</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="devices-table-body">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!--<div>
