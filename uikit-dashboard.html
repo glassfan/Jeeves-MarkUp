@@ -219,8 +219,8 @@
                         <a href="#">Dashboard</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">System Status</a></li>
-                                <li><a href="#">Battery</a></li>
+                                <li><a href="#system">System</a></li>
+                                <li><a href="#devices">Devices</a></li>
                                 <li><a href="#">Logs</a></li>                                
                             </ul>
                         </div>
@@ -231,9 +231,11 @@
 
             </div>
         </nav>
-        <div class="uk-section uk-section-primary uk-light  uk-margin-remove uk-preserve-color">
+        
+        <div class="uk-section uk-section-small uk-section-primary uk-light uk-margin-remove uk-preserve-color">
+           
             <div class="uk-container">
-
+                <a name="system"></a>
                 <h2>System</h2>
        
                 <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
@@ -267,10 +269,11 @@
                 </div>
             </div>
         </div>
-        <div class="uk-section uk-section-secondary uk-light uk-preserve-color">
+        <div class="uk-section uk-section-small uk-section-secondary uk-light uk-preserve-color">
             <div class="uk-container">
-
+                <a name="devices"></a>                
                 <h2>Devices</h2>
+                    <a href="#" uk-totop uk-scroll></a>
        
                 <div class="uk-grid-match uk-child-width-expand@m" id="devices" uk-grid>
                     <div>
@@ -313,8 +316,8 @@
                         </div>
                     </div>-->
                     
-                </div>
-            </div>
+                </div>         
+            </div>         
         </div>
         
         <!--<div class="uk-container-expand">
